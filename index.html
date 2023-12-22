@@ -1,0 +1,3920 @@
+<!DOCTYPE html>
+<html (wheel)="onMouseWheel($event)">
+
+<head *ngIf="showHtml">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+    <meta name="description" content="">
+
+
+    <title>MedControl</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/788411339843436575/1186306651586826341/favicon.ico?ex=6592c52a&is=6580502a&hm=230cb5d5de523b861a4961d0775bbf9ba6318d88a70935df32b5866f8f7b4b49&">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-reboot.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,500,600,700,800,900,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,500,600,700,800,900,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+</head>
+
+<style>
+    ::-webkit-scrollbar {
+        width: 8px;
+        display: block;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 15px;
+        background-color: rgb(240, 240, 240);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: silver;
+        border-radius: 15px;
+    }
+
+    .logo-grande {
+        margin-right: 3rem;
+        margin-bottom: 1.5rem;
+        max-width: 300px;
+    }
+
+    .flowch-footer {
+        display: flex;
+        justify-content: end;
+    }
+
+    .montecristo-footer {
+        display: flex;
+    }
+
+    @media (max-width:992px) {
+        .flowch-footer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .montecristo-footer {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width:768px) {
+        .logo-grande {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 250px;
+
+        }
+
+    }
+</style>
+
+
+
+
+
+<body *ngIf="showHtml" onscroll="changeColor()">
+    <div class="nav-fixed">
+        <div class="w-100">
+            <div class="row align-items-center" style="margin-left: 10%;">
+                <div class="logo-flowch">
+                </div>
+                <div style="display: flex; flex: 1 1 auto;"></div>
+                <div class="buttoms d-flex flex-row justify-content-end" style="margin-right: 2%;">
+                    <div class="buttom-login-container d-flex justify-content-center">
+                        <div class="buttom d-flex justify-content-center align-items-center">
+                            <div class="texto" (click)="login()">
+                                <span><strong>Entrar</strong></span>
+                            </div>
+                            <div class="icon">
+                                <i class="icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <section class="background">
+
+        <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+        <!-- <div class="overlay"></div> -->
+
+        <!-- <img class="background-img img-fluid" src="https://www.montecristocorretora.com.br/app/modules/institutional_montecristo/img/background_1.jpg" alt="Fundo"> -->
+
+        <!-- The HTML5 video element that will create the background video on the section -->
+        <!-- <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://cdn.discordapp.com/attachments/788411339843436575/1146174642575392828/office_69952.mp4" type="video/mp4">
+        </video> -->
+
+        <!-- The section content -->
+        <div class="cont">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-lg-3 logo-grande"><img style="width: 95%;" src="https://cdn.discordapp.com/attachments/788411339843436575/1184236231001903104/Imagem_do_WhatsApp_de_2023-12-12_a_s__11.41.04_345e438a-removebg-preview.png?ex=658b3cef&is=6578c7ef&hm=a646965c4abefe3548596cdb6904d02d10e819bb629d1b06b7df3dba11883254&" alt=""></div>
+                    <div class="col-12 col-lg-7 ml-2">
+                        <div class="title-wrapper">
+                            <h1 class="mbr-section-title mbr-fonts-style display-2"><strong>Com o <span style="color: #ee2f5a; font-weight: bold;">Med</span>Control sua empresa ganha tempo e resultados</strong></h1>
+                            <p class="mbr-text mbr-fonts-style display-7">Conheça já eficácia desta nossa solução inovadora e receba o retorno desejado do seu investimento</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="image-border-botton w-100" style="bottom: -2px; position: absolute; left: 0; z-index: 3;">
+            <img class="w-100" src="https://cdn.discordapp.com/attachments/788411339843436575/1187372366104367104/Ativo_3.png?ex=6596a5b0&is=658430b0&hm=4cf2063f71ba012454e46824c20856abc8686e6aec36a014deddefb2da40ee78&" alt="">
+        </div>
+    </section>
+
+    <section data-bs-version="5.1" class="article4 cid-tWr40r0TmB" id="article04-1">
+
+
+
+
+
+        <div class="container">
+            <div class="row justify-content-center flex-row-reverse">
+                <div class="col-12 col-md-12 col-lg-5 image-wrapper">
+                    <img class="w-100" src="https://cdn.discordapp.com/attachments/788411339843436575/1177225862576361472/fpdl.in-office-worker-with-tablet-pencil-23-2147717385-large-960x640.jpg?ex=6571bc05&is=655f4705&hm=a6e906f43315e69e3ffabdcb1b5672acafd38865bcdc41ab4a683121865e31e5&" alt="">
+                </div>
+                <div class="col-12 col-md-12 col-lg">
+                    <div class="text-wrapper align-left">
+                        <h1 class="mbr-section-title mbr-fonts-style mb-3 display-5"><strong>Gestão de Atestados Médicos</strong></h1>
+                        <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5" style="font-size: 32px;"><strong>Automatização com eficiência</strong></h3>
+                        <p class="mbr-text mbr-fonts-style mb-4 display-7">
+                            <br>Simplifique o processo com rapidez e maior controle.
+                            <br>
+                            <br>Elimine planilhas,e-mails, chats e concentre suas informações em uma única plataforma.
+                            <br>
+                            <br>Obtenha dados precisos e personalizáveis para decisões estratégicas do seu negócio<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section data-bs-version="5.1" class="footer1 modulem5 cid-tD2ttjseYb" once="footers" id="footer1-n">
+
+
+
+
+
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-4 d-flex flowch-footer">
+                    <div class="title-wrapper">
+                        <h3 class="mbr-section-subtitle mbr-fonts-style display-4">&nbsp; &nbsp;Powered by <a href="#" class="title-link text-white"><br><strong></strong></a></h3>
+
+                        <div class="logo-flowch">
+                            <a href="http://www.flowch.com" target="_blank"><img style="width: 173px;" src="https://cdn.discordapp.com/attachments/788411339843436575/1111018109122384022/banner-horizontal-branco-173x46.png" alt="O Med Control foi criado utilizando a plataforma Flowch"></a>
+                        </div>
+                        <div>
+                            <p class="mbr-fonts-style copyright display-4">© Copyright 2023</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="title-wrapper">
+                        <h3 class="mbr-section-subtitle mbr-fonts-style display-4"><strong>Parceria em tecnologia</strong></h3>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 montecristo-footer">
+                    <div class="link-wrapper">
+                        <div class="logo-flowch">
+                            <a href="https://www.montecristocorretora.com.br/" target="_blank"><img style="width: 173px;" src="https://cdn.discordapp.com/attachments/788411339843436575/1184236231001903104/Imagem_do_WhatsApp_de_2023-12-12_a_s__11.41.04_345e438a-removebg-preview.png?ex=658b3cef&is=6578c7ef&hm=a646965c4abefe3548596cdb6904d02d10e819bb629d1b06b7df3dba11883254&" alt="O SK-SPOT foi criado utilizando a plataforma Flowch"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.csshttps://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"></script>
+    <script>
+        (function () {
+            function C() {
+                if (!D && document.body) {
+                    D = !0; var a = document.body, b = document.documentElement, d = window.innerHeight, c = a.scrollHeight; k = 0 <= document.compatMode.indexOf("CSS") ? b : a; m = a; f.keyboardSupport && window.addEventListener("keydown", M, !1); if (top != self) v = !0; else if (ca && c > d && (a.offsetHeight <= d || b.offsetHeight <= d)) {
+                        var e = document.createElement("div"); e.style.cssText = "position:absolute; z-index:-10000; top:0; left:0; right:0; height:" + k.scrollHeight + "px"; document.body.appendChild(e); var h; w = function () {
+                            h ||
+                                (h = setTimeout(function () { e.style.height = "0"; e.style.height = k.scrollHeight + "px"; h = null }, 500))
+                        }; setTimeout(w, 10); window.addEventListener("resize", w, !1); z = new da(w); z.observe(a, { attributes: !0, childList: !0, characterData: !1 }); k.offsetHeight <= d && (d = document.createElement("div"), d.style.clear = "both", a.appendChild(d))
+                    } f.fixedBackground || (a.style.backgroundAttachment = "scroll", b.style.backgroundAttachment = "scroll")
+                }
+            } function N(a, b, d) {
+                ea(b, d); if (1 != f.accelerationMax) {
+                    var c = Date.now() - E; c < f.accelerationDelta &&
+                        (c = (1 + 50 / c) / 2, 1 < c && (c = Math.min(c, f.accelerationMax), b *= c, d *= c)); E = Date.now()
+                } t.push({ x: b, y: d, lastX: 0 > b ? .99 : -.99, lastY: 0 > d ? .99 : -.99, start: Date.now() }); if (!F) {
+                    var c = O(), e = a === c || a === document.body; null == a.$scrollBehavior && fa(a) && (a.$scrollBehavior = a.style.scrollBehavior, a.style.scrollBehavior = "auto"); var h = function (c) {
+                        c = Date.now(); for (var g = 0, k = 0, l = 0; l < t.length; l++) {
+                            var n = t[l], p = c - n.start, m = p >= f.animationTime, q = m ? 1 : p / f.animationTime; f.pulseAlgorithm && (p = q, 1 <= p ? q = 1 : 0 >= p ? q = 0 : (1 == f.pulseNormalize && (f.pulseNormalize /=
+                                P(1)), q = P(p))); p = n.x * q - n.lastX >> 0; q = n.y * q - n.lastY >> 0; g += p; k += q; n.lastX += p; n.lastY += q; m && (t.splice(l, 1), l--)
+                        } e ? window.scrollBy(g, k) : (g && (a.scrollLeft += g), k && (a.scrollTop += k)); b || d || (t = []); t.length ? Q(h, a, 1E3 / f.frameRate + 1) : (F = !1, null != a.$scrollBehavior && (a.style.scrollBehavior = a.$scrollBehavior, a.$scrollBehavior = null))
+                    }; Q(h, a, 0); F = !0
+                }
+            } function R(a) {
+                D || C(); var b = a.target; if (a.defaultPrevented || a.ctrlKey || r(m, "embed") || r(b, "embed") && /\.pdf/i.test(b.src) || r(m, "object") || b.shadowRoot) return !0; var d = -a.wheelDeltaX ||
+                    a.deltaX || 0, c = -a.wheelDeltaY || a.deltaY || 0; ga && (a.wheelDeltaX && x(a.wheelDeltaX, 120) && (d = -120 * (a.wheelDeltaX / Math.abs(a.wheelDeltaX))), a.wheelDeltaY && x(a.wheelDeltaY, 120) && (c = -120 * (a.wheelDeltaY / Math.abs(a.wheelDeltaY)))); d || c || (c = -a.wheelDelta || 0); 1 === a.deltaMode && (d *= 40, c *= 40); b = S(b); if (!b) return v && G ? (Object.defineProperty(a, "target", { value: window.frameElement }), parent.wheel(a)) : !0; if (ha(c)) return !0; 1.2 < Math.abs(d) && (d *= f.stepSize / 120); 1.2 < Math.abs(c) && (c *= f.stepSize / 120); N(b, d, c); a.preventDefault();
+                T()
+            } function M(a) {
+                var b = a.target, d = a.ctrlKey || a.altKey || a.metaKey || a.shiftKey && a.keyCode !== h.spacebar; document.body.contains(m) || (m = document.activeElement); var c = /^(textarea|select|embed|object)$/i, e = /^(button|submit|radio|checkbox|file|color|image)$/i; if (!(c = a.defaultPrevented || c.test(b.nodeName) || r(b, "input") && !e.test(b.type) || r(m, "video"))) {
+                    var c = a.target, g = !1; if (-1 != document.URL.indexOf("www.youtube.com/watch")) {
+                        do if (g = c.classList && c.classList.contains("html5-video-controls")) break; while (c = c.parentNode)
+                    } c = g
+                } if (c || b.isContentEditable || d || (r(b, "button") || r(b, "input") && e.test(b.type)) && a.keyCode === h.spacebar || r(b, "input") && "radio" == b.type && ia[a.keyCode]) return !0; c = b = 0; d = S(m); if (!d) return v && G ? parent.keydown(a) : !0; e = d.clientHeight; d == document.body && (e = window.innerHeight); switch (a.keyCode) {
+                    case h.up: c = -f.arrowScroll; break; case h.down: c = f.arrowScroll; break; case h.spacebar: c = a.shiftKey ? 1 : -1; c = -c * e * .9; break; case h.pageup: c = .9 * -e; break; case h.pagedown: c = .9 * e; break; case h.home: d == document.body && document.scrollingElement &&
+                        (d = document.scrollingElement); c = -d.scrollTop; break; case h.end: e = d.scrollHeight - d.scrollTop - e; c = 0 < e ? e + 10 : 0; break; case h.left: b = -f.arrowScroll; break; case h.right: b = f.arrowScroll; break; default: return !0
+                }N(d, b, c); a.preventDefault(); T()
+            } function U(a) { m = a.target } function T() { clearTimeout(V); V = setInterval(function () { W = H = A = {} }, 1E3) } function I(a, b, d) { d = d ? W : H; for (var c = a.length; c--;)d[J(a[c])] = b; return b } function S(a) {
+                var b = [], d = document.body, c = k.scrollHeight; do {
+                    var e = H[J(a)]; if (e) return I(b, e); b.push(a); if (c ===
+                        a.scrollHeight) { if (e = X(k) && X(d) || Y(k), v && k.clientHeight + 10 < k.scrollHeight || !v && e) return I(b, O()) } else if (a.clientHeight + 10 < a.scrollHeight && Y(a)) return I(b, a)
+                } while (a = a.parentElement)
+            } function X(a) { return "hidden" !== getComputedStyle(a, "").getPropertyValue("overflow-y") } function Y(a) { a = getComputedStyle(a, "").getPropertyValue("overflow-y"); return "scroll" === a || "auto" === a } function fa(a) { var b = J(a); null == A[b] && (a = getComputedStyle(a, "")["scroll-behavior"], A[b] = "smooth" == a); return A[b] } function r(a, b) {
+                return a &&
+                    (a.nodeName || "").toLowerCase() === b.toLowerCase()
+            } function ea(a, b) { a = 0 < a ? 1 : -1; b = 0 < b ? 1 : -1; if (B.x !== a || B.y !== b) B.x = a, B.y = b, t = [], E = 0 } function ha(a) { if (a) { l.length || (l = [a, a, a]); a = Math.abs(a); l.push(a); l.shift(); clearTimeout(Z); Z = setTimeout(function () { try { localStorage.SS_deltaBuffer = l.join(",") } catch (a) { } }, 1E3); var b = 120 < a && K(a), b = !K(120) && !K(100) && !b; return 50 > a ? !0 : b } } function x(a, b) { return Math.floor(a / b) == a / b } function K(a) { return x(l[0], a) && x(l[1], a) && x(l[2], a) } function P(a) {
+                var b; a *= f.pulseScale; 1 >
+                    a ? b = a - (1 - Math.exp(-a)) : (b = Math.exp(-1), --a, a = 1 - Math.exp(-a), b += a * (1 - b)); return b * f.pulseNormalize
+            } function y(a) { for (var b in a) aa.hasOwnProperty(b) && (f[b] = a[b]) } var aa = { frameRate: 150, animationTime: 400, stepSize: 100, pulseAlgorithm: !0, pulseScale: 4, pulseNormalize: 1, accelerationDelta: 50, accelerationMax: 3, keyboardSupport: !0, arrowScroll: 50, fixedBackground: !0, excluded: "" }, f = aa, v = !1, B = { x: 0, y: 0 }, D = !1, k = document.documentElement, m, z, w, l = [], Z, ga = /^Mac/.test(navigator.platform), h = {
+                left: 37, up: 38, right: 39, down: 40,
+                spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+            }, ia = { 37: 1, 38: 1, 39: 1, 40: 1 }, t = [], F = !1, E = Date.now(), J = function () { var a = 0; return function (b) { return b.uniqueID || (b.uniqueID = a++) } }(), W = {}, H = {}, V, A = {}; if (window.localStorage && localStorage.SS_deltaBuffer) try { l = localStorage.SS_deltaBuffer.split(",") } catch (la) { } var Q = function () { return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (a, b, d) { window.setTimeout(a, d || 1E3 / 60) } }(), da = window.MutationObserver ||
+                window.WebKitMutationObserver || window.MozMutationObserver, O = function () { var a = document.scrollingElement; return function () { if (!a) { var b = document.createElement("div"); b.style.cssText = "height:10000px;width:1px;"; document.body.appendChild(b); var d = document.body.scrollTop; window.scrollBy(0, 3); a = document.body.scrollTop != d ? document.body : document.documentElement; window.scrollBy(0, -3); document.body.removeChild(b) } return a } }(), g = window.navigator.userAgent, u = /Edge/.test(g), G = /chrome/i.test(g) && !u, u = /safari/i.test(g) &&
+                    !u, ja = /mobile/i.test(g), ka = /Windows NT 6.1/i.test(g) && /rv:11/i.test(g), ca = u && (/Version\/8/i.test(g) || /Version\/9/i.test(g)), g = (G || u || ka) && !ja, ba = !1; try { window.addEventListener("test", null, Object.defineProperty({}, "passive", { get: function () { ba = !0 } })) } catch (ma) { } var u = ba ? { passive: !1 } : !1, L = "onwheel" in document.createElement("div") ? "wheel" : "mousewheel"; L && g && (window.addEventListener(L, R, u || !1), window.addEventListener("mousedown", U, !1), window.addEventListener("load", C, !1)); y.destroy = function () {
+                        z && z.disconnect();
+                        window.removeEventListener(L, R, !1); window.removeEventListener("mousedown", U, !1); window.removeEventListener("keydown", M, !1); window.removeEventListener("resize", w, !1); window.removeEventListener("load", C, !1)
+                    }; window.SmoothScrollOptions && y(window.SmoothScrollOptions); "function" === typeof define && define.amd ? define(function () { return y }) : "object" == typeof exports ? module.exports = y : window.SmoothScroll = y
+        })();
+
+    </script>
+    <script>
+
+        var $jscomp = {
+            scope: {}, global: this, initSymbolIterator: function () { Symbol = $jscomp.global.Symbol || {}; Symbol.iterator || (Symbol.iterator = "$jscomp$iterator"); $jscomp.initSymbolIterator = function () { } }, makeIterator: function (a) { $jscomp.initSymbolIterator(); if (a[Symbol.iterator]) return a[Symbol.iterator](); if (!(a instanceof Array) && "string" != typeof a) throw Error(); var b = 0; return { next: function () { return b == a.length ? { done: !0 } : { done: !1, value: a[b++] } } } }, inherits: function (a, b) {
+                function c() { } c.prototype = b.prototype;
+                a.prototype = new c; a.prototype.constructor = a; for (var d in b) if ($jscomp.global.Object.defineProperties) { var e = $jscomp.global.Object.getOwnPropertyDescriptor(b, d); void 0 !== e && $jscomp.global.Object.defineProperty(a, d, e) } else a[d] = b[d]
+            }
+        }, EventEmitter = function () { this.events = {} }; EventEmitter.prototype.on = function (a, b) { "object" !== typeof this.events[a] && (this.events[a] = []); this.events[a].push(b) };
+        EventEmitter.prototype.removeListener = function (a, b) { var c; "object" === typeof this.events[a] && (c = this.indexOf(this.events[a], b), -1 < c && this.events[a].splice(c, 1)) }; EventEmitter.prototype.emit = function (a) { var b, c, d, e = [].slice.call(arguments, 1); if ("object" === typeof this.events[a]) for (c = this.events[a].slice(), d = c.length, b = 0; b < d; b++)c[b].apply(this, e) }; EventEmitter.prototype.once = function (a, b) { this.on(a, function d() { this.removeListener(a, d); b.apply(this, arguments) }) };
+        var loadScript = function (a, b, c) { return new Promise(function (d, e) { var f = document.createElement("script"); f.async = !0; f.src = a; for (var h = $jscomp.makeIterator(Object.entries(b || {})), g = h.next(); !g.done; g = h.next())g = g.value, f.setAttribute(g[0], g[1]); f.onload = function () { f.onerror = f.onload = null; d(f) }; f.onerror = function () { f.onerror = f.onload = null; e(Error("Failed to load " + a)) }; (c || document.head || document.getElementsByTagName("head")[0]).appendChild(f) }) }, YOUTUBE_IFRAME_API_SRC = "https://www.youtube.com/iframe_api",
+            YOUTUBE_STATES = { "-1": "unstarted", 0: "ended", 1: "playing", 2: "paused", 3: "buffering", 5: "cued" }, YOUTUBE_ERROR = { INVALID_PARAM: 2, HTML5_ERROR: 5, NOT_FOUND: 100, UNPLAYABLE_1: 101, UNPLAYABLE_2: 150 }, loadIframeAPICallbacks = [];
+        YouTubePlayer = function (a, b) {
+            var c = this; EventEmitter.call(this); var d = "string" === typeof a ? document.querySelector(a) : a; this._id = d.id ? d.id : d.id = "ytplayer-" + Math.random().toString(16).slice(2, 8); this._opts = Object.assign({ width: 640, height: 360, autoplay: !1, captions: void 0, controls: !0, keyboard: !0, fullscreen: !0, annotations: !0, modestBranding: !1, related: !0, timeupdateFrequency: 1E3, playsInline: !0, start: 0 }, b); this.videoId = null; this.destroyed = !1; this._api = null; this._autoplay = !1; this._player = null; this._ready = !1;
+            this._queue = []; this.replayInterval = []; this._interval = null; this._startInterval = this._startInterval.bind(this); this._stopInterval = this._stopInterval.bind(this); this.on("playing", this._startInterval); this.on("unstarted", this._stopInterval); this.on("ended", this._stopInterval); this.on("paused", this._stopInterval); this.on("buffering", this._stopInterval); this._loadIframeAPI(function (a, b) { if (a) return c._destroy(Error("YouTube Iframe API failed to load")); c._api = b; c.videoId && c.load(c.videoId, c._autoplay, c._start) })
+        };
+        $jscomp.inherits(YouTubePlayer, EventEmitter); YouTubePlayer.prototype.indexOf = function (a, b) { for (var c = 0, d = a.length, e = -1, f = !1; c < d && !f;)a[c] === b && (e = c, f = !0), c++; return e }; YouTubePlayer.prototype.load = function (a, b, c) { b = void 0 === b ? !1 : b; c = void 0 === c ? 0 : c; this.destroyed || (this._startOptimizeDisplayEvent(), this._optimizeDisplayHandler("center, center"), this.videoId = a, this._autoplay = b, this._start = c, this._api && (this._player ? this._ready && (b ? this._player.loadVideoById(a, c) : this._player.cueVideoById(a, c)) : this._createPlayer(a))) };
+        YouTubePlayer.prototype.play = function () { this._ready ? this._player.playVideo() : this._queueCommand("play") };
+        YouTubePlayer.prototype.replayFrom = function (a) {
+            var b = this; !this.replayInterval.find(function (a) { return a.iframeParent === b._player.h.parentNode }) && a && this.replayInterval.push({
+                iframeParent: this._player.h.parentNode, interval: setInterval(function () {
+                    if (b._player.getCurrentTime() >= b._player.getDuration() - Number(a)) {
+                        b.seek(0); for (var c = $jscomp.makeIterator(b.replayInterval.entries()), d = c.next(); !d.done; d = c.next())d = d.value[0], Object.hasOwnProperty.call(b.replayInterval, d) && (clearInterval(b.replayInterval[d].interval),
+                            b.replayInterval.splice(d, 1))
+                    }
+                }, 1E3 * Number(a))
+            })
+        }; YouTubePlayer.prototype.pause = function () { this._ready ? this._player.pauseVideo() : this._queueCommand("pause") }; YouTubePlayer.prototype.stop = function () { this._ready ? this._player.stopVideo() : this._queueCommand("stop") }; YouTubePlayer.prototype.seek = function (a) { this._ready ? this._player.seekTo(a, !0) : this._queueCommand("seek", a) };
+        YouTubePlayer.prototype._optimizeDisplayHandler = function (a) {
+            if (this._player) {
+                var b = this._player.h; a = a.split(","); if (b) {
+                    var c, d; if (c = b.parentElement) {
+                        var e = window.getComputedStyle(c); d = c.clientHeight + parseFloat(e.marginTop, 10) + parseFloat(e.marginBottom, 10) + parseFloat(e.borderTopWidth, 10) + parseFloat(e.borderBottomWidth, 10); c = c.clientWidth + parseFloat(e.marginLeft, 10) + parseFloat(e.marginRight, 10) + parseFloat(e.borderLeftWidth, 10) + parseFloat(e.borderRightWidth, 10); d += 80; b.style.width = c + "px"; b.style.height =
+                            Math.ceil(parseFloat(b.style.width, 10) / 1.7) + "px"; b.style.marginTop = Math.ceil(-((parseFloat(b.style.height, 10) - d) / 2)) + "px"; b.style.marginLeft = 0; if (e = parseFloat(b.style.height, 10) < d) b.style.height = d + "px", b.style.width = Math.ceil(1.7 * parseFloat(b.style.height, 10)) + "px", b.style.marginTop = 0, b.style.marginLeft = Math.ceil(-((parseFloat(b.style.width, 10) - c) / 2)) + "px"; for (var f in a) if (a.hasOwnProperty(f)) switch (a[f].replace(/ /g, "")) {
+                                case "top": b.style.marginTop = e ? -((parseFloat(b.style.height, 10) - d) / 2) + "px" :
+                                    0; break; case "bottom": b.style.marginTop = e ? 0 : -(parseFloat(b.style.height, 10) - d) + "px"; break; case "left": b.style.marginLeft = 0; break; case "right": b.style.marginLeft = e ? -(parseFloat(b.style.width, 10) - c) : "0px"; break; default: parseFloat(b.style.width, 10) > c && (b.style.marginLeft = -((parseFloat(b.style.width, 10) - c) / 2) + "px")
+                            }
+                    }
+                }
+            }
+        }; YouTubePlayer.prototype.stopResize = function () { window.removeEventListener("resize", this._resizeListener); this._resizeListener = null };
+        YouTubePlayer.prototype.stopReplay = function (a) { for (var b = $jscomp.makeIterator(this.replayInterval.entries()), c = b.next(); !c.done; c = b.next())c = c.value[0], Object.hasOwnProperty.call(this.replayInterval, c) && a === this.replayInterval[c].iframeParent && (clearInterval(this.replayInterval[c].interval), this.replayInterval.splice(c, 1)) }; YouTubePlayer.prototype.setVolume = function (a) { this._ready ? this._player.setVolume(a) : this._queueCommand("setVolume", a) };
+        YouTubePlayer.prototype.loadPlaylist = function () { this._ready ? this._player.loadPlaylist(this.videoId) : this._queueCommand("loadPlaylist", this.videoId) }; YouTubePlayer.prototype.setLoop = function (a) { this._ready ? this._player.setLoop(a) : this._queueCommand("setLoop", a) }; YouTubePlayer.prototype.getVolume = function () { return this._ready && this._player.getVolume() || 0 }; YouTubePlayer.prototype.mute = function () { this._ready ? this._player.mute() : this._queueCommand("mute") };
+        YouTubePlayer.prototype.unMute = function () { this._ready ? this._player.unMute() : this._queueCommand("unMute") }; YouTubePlayer.prototype.isMuted = function () { return this._ready && this._player.isMuted() || !1 }; YouTubePlayer.prototype.setSize = function (a, b) { this._ready ? this._player.setSize(a, b) : this._queueCommand("setSize", a, b) }; YouTubePlayer.prototype.setPlaybackRate = function (a) { this._ready ? this._player.setPlaybackRate(a) : this._queueCommand("setPlaybackRate", a) };
+        YouTubePlayer.prototype.setPlaybackQuality = function (a) { this._ready ? this._player.setPlaybackQuality(a) : this._queueCommand("setPlaybackQuality", a) }; YouTubePlayer.prototype.getPlaybackRate = function () { return this._ready && this._player.getPlaybackRate() || 1 }; YouTubePlayer.prototype.getAvailablePlaybackRates = function () { return this._ready && this._player.getAvailablePlaybackRates() || [1] }; YouTubePlayer.prototype.getDuration = function () { return this._ready && this._player.getDuration() || 0 };
+        YouTubePlayer.prototype.getProgress = function () { return this._ready && this._player.getVideoLoadedFraction() || 0 }; YouTubePlayer.prototype.getState = function () { return this._ready && YOUTUBE_STATES[this._player.getPlayerState()] || "unstarted" }; YouTubePlayer.prototype.getCurrentTime = function () { return this._ready && this._player.getCurrentTime() || 0 }; YouTubePlayer.prototype.destroy = function () { this._destroy() };
+        YouTubePlayer.prototype._destroy = function (a) {
+            this.destroyed || (this.destroyed = !0, this._player && (this._player.stopVideo && this._player.stopVideo(), this._player.destroy()), this._player = this._api = this._opts = this._id = this.videoId = null, this._ready = !1, this._queue = null, this._stopInterval(), this.removeListener("playing", this._startInterval), this.removeListener("paused", this._stopInterval), this.removeListener("buffering", this._stopInterval), this.removeListener("unstarted", this._stopInterval), this.removeListener("ended",
+                this._stopInterval), a && this.emit("error", a))
+        }; YouTubePlayer.prototype._queueCommand = function (a, b) { for (var c = [], d = 1; d < arguments.length; ++d)c[d - 1] = arguments[d]; this.destroyed || this._queue.push([a, c]) }; YouTubePlayer.prototype._flushQueue = function () { for (; this._queue.length;) { var a = this._queue.shift(); this[a[0]].apply(this, a[1]) } };
+        YouTubePlayer.prototype._loadIframeAPI = function (a) {
+            if (window.YT && "function" === typeof window.YT.Player) return a(null, window.YT); loadIframeAPICallbacks.push(a); Array.from(document.getElementsByTagName("script")).some(function (a) { return a.src === YOUTUBE_IFRAME_API_SRC }) || loadScript(YOUTUBE_IFRAME_API_SRC).catch(function (a) { for (; loadIframeAPICallbacks.length;)loadIframeAPICallbacks.shift()(a) }); var b = window.onYouTubeIframeAPIReady; window.onYouTubeIframeAPIReady = function () {
+                for ("function" === typeof b && b(); loadIframeAPICallbacks.length;)loadIframeAPICallbacks.shift()(null,
+                    window.YT)
+            }
+        };
+        YouTubePlayer.prototype._createPlayer = function (a) {
+            var b = this; if (!this.destroyed) {
+                var c = this._opts; this._player = new this._api.Player(this._id, {
+                    width: c.width, height: c.height, videoId: a, host: c.host, playerVars: {
+                        autoplay: c.autoplay ? 1 : 0, mute: c.mute ? 1 : 0, hl: null != c.captions && !1 !== c.captions ? c.captions : void 0, cc_lang_pref: null != c.captions && !1 !== c.captions ? c.captions : void 0, controls: c.controls ? 2 : 0, enablejsapi: 1, allowfullscreen: !0, iv_load_policy: c.annotations ? 1 : 3, modestbranding: c.modestBranding ? 1 : 0, origin: "*",
+                        rel: c.related ? 1 : 0, mode: "transparent", showinfo: 0, html5: 1, version: 3, playerapiid: "iframe_YTP_1624972482514"
+                    }, events: { onReady: function () { return b._onReady(a) }, onStateChange: function (a) { return b._onStateChange(a) }, onPlaybackQualityChange: function (a) { return b._onPlaybackQualityChange(a) }, onPlaybackRateChange: function (a) { return b._onPlaybackRateChange(a) }, onError: function (a) { return b._onError(a) } }
+                })
+            }
+        };
+        YouTubePlayer.prototype._onReady = function (a) { this.destroyed || (this._ready = !0, this.load(this.videoId, this._autoplay, this._start), this._flushQueue()) }; YouTubePlayer.prototype._onStateChange = function (a) { if (!this.destroyed) { var b = YOUTUBE_STATES[a.data]; if (b) ["paused", "buffering", "ended"].includes(b) && this._onTimeupdate(), this.emit(b), ["unstarted", "playing", "cued"].includes(b) && this._onTimeupdate(); else throw Error("Unrecognized state change: " + a); } };
+        YouTubePlayer.prototype._onPlaybackQualityChange = function (a) { this.destroyed || this.emit("playbackQualityChange", a.data) }; YouTubePlayer.prototype._onPlaybackRateChange = function (a) { this.destroyed || this.emit("playbackRateChange", a.data) };
+        YouTubePlayer.prototype._onError = function (a) { if (!this.destroyed && (a = a.data, a !== YOUTUBE_ERROR.HTML5_ERROR)) { if (a === YOUTUBE_ERROR.UNPLAYABLE_1 || a === YOUTUBE_ERROR.UNPLAYABLE_2 || a === YOUTUBE_ERROR.NOT_FOUND || a === YOUTUBE_ERROR.INVALID_PARAM) return this.emit("unplayable", this.videoId); this._destroy(Error("YouTube Player Error. Unknown error code: " + a)) } };
+        YouTubePlayer.prototype._startOptimizeDisplayEvent = function () { var a = this; this._resizeListener || (this._resizeListener = function () { return a._optimizeDisplayHandler("center, center") }, window.addEventListener("resize", this._resizeListener)) }; YouTubePlayer.prototype._onTimeupdate = function () { this.emit("timeupdate", this.getCurrentTime()) }; YouTubePlayer.prototype._startInterval = function () { var a = this; this._interval = setInterval(function () { return a._onTimeupdate() }, this._opts.timeupdateFrequency) };
+        YouTubePlayer.prototype._stopInterval = function () { clearInterval(this._interval); this._interval = null };
+
+    </script>
+    <script>
+
+        (function (q, u) { "object" === typeof exports && "undefined" !== typeof module ? module.exports = u() : "function" === typeof define && define.amd ? define(u) : (q = "undefined" !== typeof globalThis ? globalThis : q || self, q.Vimeo = q.Vimeo || {}, q.Vimeo.Player = u()) })(this, function () {
+            function q(c, a) { for (var b = 0; b < a.length; b++) { var d = a[b]; d.enumerable = d.enumerable || !1; d.configurable = !0; "value" in d && (d.writable = !0); Object.defineProperty(c, d.key, d) } } function u(c, a, b) { a && q(c.prototype, a); b && q(c, b); return c } function G(c, a) {
+                return 0 === c.indexOf(a.toLowerCase()) ?
+                    c : "".concat(a.toLowerCase()).concat(c.substr(0, 1).toUpperCase()).concat(c.substr(1))
+            } function w(c) { return /^(https?:)?\/\/((player|www)\.)?vimeo\.com(?=$|\/)/.test(c) } function H() {
+                var c = 0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : {}, a = c.id, c = c.url, c = a || c; if (!c) throw Error("An id or url must be passed, either in an options object or as a data-vimeo-id or data-vimeo-url attribute."); if (!isNaN(parseFloat(c)) && isFinite(c) && Math.floor(c) == c) return "https://vimeo.com/".concat(c); if (w(c)) return c.replace("http:",
+                    "https:"); if (a) throw new TypeError("\u201c".concat(a, "\u201d is not a valid video id.")); throw new TypeError("\u201c".concat(c, "\u201d is not a vimeo.com url."));
+            } function x(c, a, b) { var d = p.get(c.element) || {}; a in d || (d[a] = []); d[a].push(b); p.set(c.element, d) } function z(c, a) { return (p.get(c.element) || {})[a] || [] } function A(c, a, b) { var d = p.get(c.element) || {}; if (!d[a]) return !0; if (!b) return d[a] = [], p.set(c.element, d), !0; b = d[a].indexOf(b); -1 !== b && d[a].splice(b, 1); p.set(c.element, d); return d[a] && 0 === d[a].length }
+            function N(c, a) { var b = z(c, a); if (1 > b.length) return !1; b = b.shift(); A(c, a, b); return b } function I(c) { return O.reduce(function (a, b) { var d = c.getAttribute("data-vimeo-".concat(b)); if (d || "" === d) a[b] = "" === d ? 1 : d; return a }, 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {}) } function B(c, a) {
+                var b = c.html; if (!a) throw new TypeError("An element must be provided"); if (null !== a.getAttribute("data-vimeo-initialized")) return a.querySelector("iframe"); var d = document.createElement("div"); d.innerHTML = b; a.appendChild(d.firstChild);
+                a.setAttribute("data-vimeo-initialized", "true"); return a.querySelector("iframe")
+            } function J(c) {
+                var a = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {}, b = 2 < arguments.length ? arguments[2] : void 0; return new Promise(function (d, e) {
+                    if (!w(c)) throw new TypeError("\u201c".concat(c, "\u201d is not a vimeo.com url.")); var f = "https://vimeo.com/api/oembed.json?url=".concat(encodeURIComponent(c)), m; for (m in a) a.hasOwnProperty(m) && (f += "&".concat(m, "=").concat(encodeURIComponent(a[m]))); var k = "XDomainRequest" in
+                        window ? new XDomainRequest : new XMLHttpRequest; k.open("GET", f, !0); k.onload = function () { if (404 === k.status) e(Error("\u201c".concat(c, "\u201d was not found."))); else if (403 === k.status) e(Error("\u201c".concat(c, "\u201d is not embeddable."))); else try { var a = JSON.parse(k.responseText); 403 === a.domain_status_code ? (B(a, b), e(Error("\u201c".concat(c, "\u201d is not embeddable.")))) : d(a) } catch (f) { e(f) } }; k.onerror = function () {
+                            var a = k.status ? " (".concat(k.status, ")") : ""; e(Error("There was an error fetching the embed code from Vimeo".concat(a,
+                                ".")))
+                        }; k.send()
+                })
+            } function Q() { var c = function (a) { "console" in window && console.error && console.error("There was an error creating an embed: ".concat(a)) };[].slice.call((0 < arguments.length && void 0 !== arguments[0] ? arguments[0] : document).querySelectorAll("[data-vimeo-id], [data-vimeo-url]")).forEach(function (a) { try { if (null === a.getAttribute("data-vimeo-defer")) { var b = I(a), d = H(b); J(d, b, a).then(function (b) { return B(b, a) }).catch(c) } } catch (e) { c(e) } }) } function R() {
+                var c = 0 < arguments.length && void 0 !== arguments[0] ?
+                    arguments[0] : document; window.VimeoPlayerResizeEmbeds_ || (window.VimeoPlayerResizeEmbeds_ = !0, window.addEventListener("message", function (a) { if (w(a.origin) && a.data && "spacechange" === a.data.event) for (var b = c.querySelectorAll("iframe"), d = 0; d < b.length; d++)if (b[d].contentWindow === a.source) { b[d].parentElement.style.paddingBottom = "".concat(a.data.data[0].bottom, "px"); break } }))
+            } function K(c) { if ("string" === typeof c) try { c = JSON.parse(c) } catch (a) { return console.warn(a), {} } return c } function y(c, a, b) {
+                c.element.contentWindow &&
+                    c.element.contentWindow.postMessage && (a = { method: a }, void 0 !== b && (a.value = b), b = parseFloat(navigator.userAgent.toLowerCase().replace(/^.*msie (\d+).*$/, "$1")), 8 <= b && 10 > b && (a = JSON.stringify(a)), c.element.contentWindow.postMessage(a, c.origin))
+            } function S(c, a) {
+                a = K(a); var b = [], d; if (a.event) "error" === a.event && z(c, a.data.method).forEach(function (b) { var d = Error(a.data.message); d.name = a.data.name; b.reject(d); A(c, a.data.method, b) }), b = z(c, "event:".concat(a.event)), d = a.data; else if (a.method) {
+                    var e = N(c, a.method);
+                    e && (b.push(e), d = a.value)
+                } b.forEach(function (a) { try { "function" === typeof a ? a.call(c, d) : a.resolve(d) } catch (b) { } })
+            } function T() {
+                var c = function () {
+                    for (var a, b = ["requestFullscreen exitFullscreen fullscreenElement fullscreenEnabled fullscreenchange fullscreenerror".split(" "), "webkitRequestFullscreen webkitExitFullscreen webkitFullscreenElement webkitFullscreenEnabled webkitfullscreenchange webkitfullscreenerror".split(" "), "webkitRequestFullScreen webkitCancelFullScreen webkitCurrentFullScreenElement webkitCancelFullScreen webkitfullscreenchange webkitfullscreenerror".split(" "),
+                    "mozRequestFullScreen mozCancelFullScreen mozFullScreenElement mozFullScreenEnabled mozfullscreenchange mozfullscreenerror".split(" "), "msRequestFullscreen msExitFullscreen msFullscreenElement msFullscreenEnabled MSFullscreenChange MSFullscreenError".split(" ")], c = 0, m = b.length, k = {}; c < m; c++)if ((a = b[c]) && a[1] in document) { for (c = 0; c < a.length; c++)k[b[0][c]] = a[c]; return k } return !1
+                }(), a = { fullscreenchange: c.fullscreenchange, fullscreenerror: c.fullscreenerror }, b = {
+                    request: function (a) {
+                        return new Promise(function (e,
+                            f) { var m = function t() { b.off("fullscreenchange", t); e() }; b.on("fullscreenchange", m); a = a || document.documentElement; var k = a[c.requestFullscreen](); k instanceof Promise && k.then(m).catch(f) })
+                    }, exit: function () { return new Promise(function (a, e) { if (b.isFullscreen) { var f = function P() { b.off("fullscreenchange", P); a() }; b.on("fullscreenchange", f); var m = document[c.exitFullscreen](); m instanceof Promise && m.then(f).catch(e) } else a() }) }, on: function (b, c) { var f = a[b]; f && document.addEventListener(f, c) }, off: function (b, c) {
+                        var f =
+                            a[b]; f && document.removeEventListener(f, c)
+                    }
+                }; Object.defineProperties(b, { isFullscreen: { get: function () { return Boolean(document[c.fullscreenElement]) } }, element: { enumerable: !0, get: function () { return document[c.fullscreenElement] } }, isEnabled: { enumerable: !0, get: function () { return Boolean(document[c.fullscreenEnabled]) } } }); return b
+            } var L = "undefined" !== typeof global && "[object global]" === {}.toString.call(global), C = "undefined" !== typeof Array.prototype.indexOf, U = "undefined" !== typeof window && "undefined" !== typeof window.postMessage;
+            if (!(L || C && U)) throw Error("Sorry, the Vimeo Player API is not available in this browser."); var M = "undefined" !== typeof globalThis ? globalThis : "undefined" !== typeof window ? window : "undefined" !== typeof global ? global : "undefined" !== typeof self ? self : {}; (function (c) {
+                if (!c.WeakMap) {
+                    var a = Object.prototype.hasOwnProperty, b = function (a, b, c) { Object.defineProperty ? Object.defineProperty(a, b, { configurable: !0, writable: !0, value: c }) : a[b] = c }; c.WeakMap = function () {
+                        function c() {
+                            if (void 0 === this) throw new TypeError("Constructor WeakMap requires 'new'");
+                            b(this, "_id", "_WeakMap_" + Math.random().toString().substring(2) + "." + Math.random().toString().substring(2)); if (0 < arguments.length) throw new TypeError("WeakMap iterable is not supported");
+                        } function e(b, c) { if (Object(b) !== b || !a.call(b, "_id")) throw new TypeError(c + " method called on incompatible receiver " + typeof b); } b(c.prototype, "delete", function (a) { e(this, "delete"); if (Object(a) !== a) return !1; var b = a[this._id]; return b && b[0] === a ? (delete a[this._id], !0) : !1 }); b(c.prototype, "get", function (a) {
+                            e(this, "get");
+                            if (Object(a) === a) { var b = a[this._id]; if (b && b[0] === a) return b[1] }
+                        }); b(c.prototype, "has", function (a) { e(this, "has"); if (Object(a) !== a) return !1; var b = a[this._id]; return b && b[0] === a ? !0 : !1 }); b(c.prototype, "set", function (a, c) { e(this, "set"); if (Object(a) !== a) throw new TypeError("Invalid value used as weak map key"); var d = a[this._id]; if (d && d[0] === a) return d[1] = c, this; b(a, this._id, [a, c]); return this }); b(c, "_polyfill", !0); return c
+                    }()
+                }
+            })("undefined" !== typeof self ? self : "undefined" !== typeof window ? window : M); var r =
+                function (c, a) { return a = { exports: {} }, c(a, a.exports), a.exports }(function (c) {
+                    (function (a, b, d) { b[a] = b[a] || d(); c.exports && (c.exports = b[a]) })("Promise", M, function () {
+                        function a(a, b) { p.add(a, b); E || (E = r(p.drain)) } function b(a) { var b, c = typeof a; null == a || "object" != c && "function" != c || (b = a.then); return "function" == typeof b ? b : !1 } function c() {
+                            for (var a = 0; a < this.chain.length; a++) {
+                                var d = 1 === this.state ? this.chain[a].success : this.chain[a].failure, g = this.chain[a], e = void 0, f = void 0; try {
+                                    !1 === d ? g.reject(this.msg) : (e = !0 ===
+                                        d ? this.msg : d.call(void 0, this.msg), e === g.promise ? g.reject(TypeError("Promise-chain cycle")) : (f = b(e)) ? f.call(e, g.resolve, g.reject) : g.resolve(e))
+                                } catch (n) { g.reject(n) }
+                            } this.chain.length = 0
+                        } function e(D) { var h, g = this; if (!g.triggered) { g.triggered = !0; g.def && (g = g.def); try { (h = b(D)) ? a(function () { var a = new k(g); try { h.call(D, function () { e.apply(a, arguments) }, function () { f.apply(a, arguments) }) } catch (b) { f.call(a, b) } }) : (g.msg = D, g.state = 1, 0 < g.chain.length && a(c, g)) } catch (n) { f.call(new k(g), n) } } } function f(b) {
+                            var h =
+                                this; h.triggered || (h.triggered = !0, h.def && (h = h.def), h.msg = b, h.state = 2, 0 < h.chain.length && a(c, h))
+                        } function m(a, b, c, d) { for (var e = 0; e < b.length; e++)(function (e) { a.resolve(b[e]).then(function (a) { c(e, a) }, d) })(e) } function k(a) { this.def = a; this.triggered = !1 } function l(a) { this.promise = a; this.state = 0; this.triggered = !1; this.chain = []; this.msg = void 0 } function t(b) {
+                            if ("function" != typeof b) throw TypeError("Not a function"); if (0 !== this.__NPO__) throw TypeError("Not a promise"); this.__NPO__ = 1; var h = new l(this); this.then =
+                                function (b, e) { var g = { success: "function" == typeof b ? b : !0, failure: "function" == typeof e ? e : !1 }; g.promise = new this.constructor(function (a, b) { if ("function" != typeof a || "function" != typeof b) throw TypeError("Not a function"); g.resolve = a; g.reject = b }); h.chain.push(g); 0 !== h.state && a(c, h); return g.promise }; this["catch"] = function (a) { return this.then(void 0, a) }; try { b.call(void 0, function (a) { e.call(h, a) }, function (a) { f.call(h, a) }) } catch (g) { f.call(h, g) }
+                        } var n, E, p, q = Object.prototype.toString, r = "undefined" != typeof setImmediate ?
+                            function (a) { return setImmediate(a) } : setTimeout; try { Object.defineProperty({}, "x", {}), n = function (a, b, c, d) { return Object.defineProperty(a, b, { value: c, writable: !0, configurable: !1 !== d }) } } catch (v) { n = function (a, b, c) { a[b] = c; return a } } p = function () { function a(b, c) { this.fn = b; this.self = c; this.next = void 0 } var b, c, d; return { add: function (e, f) { d = new a(e, f); c ? c.next = d : b = d; c = d; d = void 0 }, drain: function () { var a = b; for (b = c = E = void 0; a;)a.fn.call(a.self), a = a.next } } }(); var u = n({}, "constructor", t, !1); t.prototype = u; n(u, "__NPO__",
+                                0, !1); n(t, "resolve", function (a) { return a && "object" == typeof a && 1 === a.__NPO__ ? a : new this(function (b, c) { if ("function" != typeof b || "function" != typeof c) throw TypeError("Not a function"); b(a) }) }); n(t, "reject", function (a) { return new this(function (b, c) { if ("function" != typeof b || "function" != typeof c) throw TypeError("Not a function"); c(a) }) }); n(t, "all", function (a) {
+                                    var b = this; return "[object Array]" != q.call(a) ? b.reject(TypeError("Not an array")) : 0 === a.length ? b.resolve([]) : new b(function (c, d) {
+                                        if ("function" != typeof c ||
+                                            "function" != typeof d) throw TypeError("Not a function"); var e = a.length, f = Array(e), n = 0; m(b, a, function (a, b) { f[a] = b; ++n === e && c(f) }, d)
+                                    })
+                                }); n(t, "race", function (a) { var b = this; return "[object Array]" != q.call(a) ? b.reject(TypeError("Not an array")) : new b(function (c, d) { if ("function" != typeof c || "function" != typeof d) throw TypeError("Not a function"); m(b, a, function (a, b) { c(b) }, d) }) }); return t
+                    })
+                }), p = new WeakMap, O = "autopause autoplay background byline color controls dnt height id loop maxheight maxwidth muted playsinline portrait responsive speed texttrack title transparent url width".split(" "),
+                v = new WeakMap, F = new WeakMap, l = {}, C = function () {
+                    function c(a) {
+                        var b = this, d = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {}; if (!(this instanceof c)) throw new TypeError("Cannot call a class as a function"); window.jQuery && a instanceof jQuery && (1 < a.length && window.console && console.warn && console.warn("A jQuery object with multiple elements was passed, using the first element."), a = a[0]); "undefined" !== typeof document && "string" === typeof a && (a = document.getElementById(a)); if (!Boolean(a && 1 === a.nodeType &&
+                            "nodeName" in a && a.ownerDocument && a.ownerDocument.defaultView)) throw new TypeError("You must pass either a valid element or a valid id."); if ("IFRAME" !== a.nodeName) { var e = a.querySelector("iframe"); e && (a = e) } if ("IFRAME" === a.nodeName && !w(a.getAttribute("src") || "")) throw Error("The player element passed isn\u2019t a Vimeo embed."); if (v.has(a)) return v.get(a); this._window = a.ownerDocument.defaultView; this.element = a; this.origin = "*"; e = new r(function (c, e) {
+                                b._onMessage = function (a) {
+                                    if (w(a.origin) && b.element.contentWindow ===
+                                        a.source) if ("*" === b.origin && (b.origin = a.origin), (a = K(a.data)) && "error" === a.event && a.data && "ready" === a.data.method) { var d = Error(a.data.message); d.name = a.data.name; e(d) } else d = a && "ping" === a.method, a && "ready" === a.event || d ? (b.element.setAttribute("data-ready", "true"), c()) : S(b, a)
+                                }; b._window.addEventListener("message", b._onMessage); if ("IFRAME" !== b.element.nodeName) {
+                                    var f = I(a, d), l = H(f); J(l, f, a).then(function (c) {
+                                        var d = B(c, a); b.element = d; var e = b._originalElement = a, f = p.get(e); p.set(d, f); p.delete(e); v.set(b.element,
+                                            b); return c
+                                    }).catch(e)
+                                }
+                            }); F.set(this, e); v.set(this.element, this); "IFRAME" === this.element.nodeName && y(this, "ping"); if (l.isEnabled) { var f = function () { return l.exit() }; l.on("fullscreenchange", function () { l.isFullscreen ? x(b, "event:exitFullscreen", f) : A(b, "event:exitFullscreen", f); b.ready().then(function () { y(b, "fullscreenchange", l.isFullscreen) }) }) } return this
+                    } u(c, [{
+                        key: "callMethod", value: function (a) {
+                            var b = this, c = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {}; return new r(function (e, f) {
+                                return b.ready().then(function () {
+                                    x(b,
+                                        a, { resolve: e, reject: f }); y(b, a, c)
+                                }).catch(f)
+                            })
+                        }
+                    }, { key: "get", value: function (a) { var b = this; return new r(function (c, e) { a = G(a, "get"); return b.ready().then(function () { x(b, a, { resolve: c, reject: e }); y(b, a) }).catch(e) }) } }, { key: "set", value: function (a, b) { var c = this; return new r(function (e, f) { a = G(a, "set"); if (void 0 === b || null === b) throw new TypeError("There must be a value to set."); return c.ready().then(function () { x(c, a, { resolve: e, reject: f }); y(c, a, b) }).catch(f) }) } }, {
+                        key: "on", value: function (a, b) {
+                            if (!a) throw new TypeError("You must pass an event name.");
+                            if (!b) throw new TypeError("You must pass a callback function."); if ("function" !== typeof b) throw new TypeError("The callback must be a function."); 0 === z(this, "event:".concat(a)).length && this.callMethod("addEventListener", a).catch(function () { }); x(this, "event:".concat(a), b)
+                        }
+                    }, {
+                        key: "off", value: function (a, b) {
+                            if (!a) throw new TypeError("You must pass an event name."); if (b && "function" !== typeof b) throw new TypeError("The callback must be a function."); A(this, "event:".concat(a), b) && this.callMethod("removeEventListener",
+                                a).catch(function (a) { })
+                        }
+                    }, { key: "loadVideo", value: function (a) { return this.callMethod("loadVideo", a) } }, { key: "ready", value: function () { var a = F.get(this) || new r(function (a, c) { c(Error("Unknown player. Probably unloaded.")) }); return r.resolve(a) } }, { key: "addCuePoint", value: function (a) { return this.callMethod("addCuePoint", { time: a, data: 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {} }) } }, { key: "removeCuePoint", value: function (a) { return this.callMethod("removeCuePoint", a) } }, {
+                        key: "enableTextTrack", value: function (a,
+                            b) { if (!a) throw new TypeError("You must pass a language."); return this.callMethod("enableTextTrack", { language: a, kind: b }) }
+                    }, { key: "disableTextTrack", value: function () { return this.callMethod("disableTextTrack") } }, { key: "pause", value: function () { return this.callMethod("pause") } }, { key: "play", value: function () { return this.callMethod("play") } }, { key: "requestFullscreen", value: function () { return l.isEnabled ? l.request(this.element) : this.callMethod("requestFullscreen") } }, {
+                        key: "exitFullscreen", value: function () {
+                            return l.isEnabled ?
+                                l.exit() : this.callMethod("exitFullscreen")
+                        }
+                    }, { key: "getFullscreen", value: function () { return l.isEnabled ? r.resolve(l.isFullscreen) : this.get("fullscreen") } }, { key: "unload", value: function () { return this.callMethod("unload") } }, {
+                        key: "destroy", value: function () {
+                            var a = this; return new r(function (b) {
+                                F.delete(a); v.delete(a.element); a._originalElement && (v.delete(a._originalElement), a._originalElement.removeAttribute("data-vimeo-initialized")); a.element && "IFRAME" === a.element.nodeName && a.element.parentNode && a.element.parentNode.removeChild(a.element);
+                                if (a.element && "DIV" === a.element.nodeName && a.element.parentNode) { a.element.removeAttribute("data-vimeo-initialized"); var c = a.element.querySelector("iframe"); c && c.parentNode && c.parentNode.removeChild(c) } a._window.removeEventListener("message", a._onMessage); b()
+                            })
+                        }
+                    }, { key: "getAutopause", value: function () { return this.get("autopause") } }, { key: "setAutopause", value: function (a) { return this.set("autopause", a) } }, { key: "getBuffered", value: function () { return this.get("buffered") } }, { key: "getCameraProps", value: function () { return this.get("cameraProps") } },
+                    { key: "setCameraProps", value: function (a) { return this.set("cameraProps", a) } }, { key: "getChapters", value: function () { return this.get("chapters") } }, { key: "getCurrentChapter", value: function () { return this.get("currentChapter") } }, { key: "getColor", value: function () { return this.get("color") } }, { key: "setColor", value: function (a) { return this.set("color", a) } }, { key: "getCuePoints", value: function () { return this.get("cuePoints") } }, { key: "getCurrentTime", value: function () { return this.get("currentTime") } }, {
+                        key: "setCurrentTime",
+                        value: function (a) { return this.set("currentTime", a) }
+                    }, { key: "getDuration", value: function () { return this.get("duration") } }, { key: "getEnded", value: function () { return this.get("ended") } }, { key: "getLoop", value: function () { return this.get("loop") } }, { key: "setLoop", value: function (a) { return this.set("loop", a) } }, { key: "setMuted", value: function (a) { return this.set("muted", a) } }, { key: "getMuted", value: function () { return this.get("muted") } }, { key: "getPaused", value: function () { return this.get("paused") } }, {
+                        key: "getPlaybackRate",
+                        value: function () { return this.get("playbackRate") }
+                    }, { key: "setPlaybackRate", value: function (a) { return this.set("playbackRate", a) } }, { key: "getPlayed", value: function () { return this.get("played") } }, { key: "getQualities", value: function () { return this.get("qualities") } }, { key: "getQuality", value: function () { return this.get("quality") } }, { key: "setQuality", value: function (a) { return this.set("quality", a) } }, { key: "getSeekable", value: function () { return this.get("seekable") } }, { key: "getSeeking", value: function () { return this.get("seeking") } },
+                    { key: "getTextTracks", value: function () { return this.get("textTracks") } }, { key: "getVideoEmbedCode", value: function () { return this.get("videoEmbedCode") } }, { key: "getVideoId", value: function () { return this.get("videoId") } }, { key: "getVideoTitle", value: function () { return this.get("videoTitle") } }, { key: "getVideoWidth", value: function () { return this.get("videoWidth") } }, { key: "getVideoHeight", value: function () { return this.get("videoHeight") } }, { key: "getVideoUrl", value: function () { return this.get("videoUrl") } }, {
+                        key: "getVolume",
+                        value: function () { return this.get("volume") }
+                    }, { key: "setVolume", value: function (a) { return this.set("volume", a) } }]); return c
+                }(); L || (l = T(), Q(), R()); return C
+        });
+
+    </script>
+    <script>
+
+        (function () {
+            function q(a, b) { var c = Array.from(a.querySelectorAll(b)); a.matches && a.matches(b) && c.splice(0, 0, a); return c } function w(a) { a = a.getBoundingClientRect(); var b = document.documentElement; return { top: a.top + window.pageYOffset - b.clientTop, left: a.left + window.pageXOffset - b.clientLeft } } function u(a) { return parseFloat(getComputedStyle(a, null).height.replace("px", "")) } function x(a) { return parseFloat(getComputedStyle(a, null).width.replace("px", "")) } function r(a) {
+                "loading" != document.readyState ? a() : document.addEventListener("DOMContentLoaded",
+                    a)
+            } function D(a) { (function c() { 0 > (a.style.opacity -= .1) ? a.style.display = "none" : requestAnimationFrame(c) })() } function E(a) { a.style.display = "block"; (function c() { var e = parseFloat(a.style.opacity); 1 < (e += .1) || (a.style.opacity = e, requestAnimationFrame(c)) })() } function t(a) {
+                var b = [], c = { blackberry: "BlackBerry", android: "Android", windows: "IEMobile", opera: "Opera Mini", ios: "iPhone|iPad|iPod" }; a = "undefined" == typeof a ? "*" : a.toLowerCase(); "*" === a ? b = Object.values(c) : a in c && b.push(c[a]); return !(!b.length || !navigator.userAgent.match(new RegExp(b.join("|"),
+                    "i")))
+            } function A(a) { var b = a.querySelector(".carousel-item"); a = a.querySelector(".carousel-indicators > li"); b.classList.add("active"); a && a.classList.add("active") } function v(a) {
+                var b = a.getAttribute("id") + "-carousel", c = a.getAttribute("data-bs-version") && a.getAttribute("data-bs-version").startsWith("5"); null === a.getAttribute("id") && (b = a.classList.value.match(/cid-.*?(?=\s|$)/) + "-carousel"); a.querySelectorAll(".carousel").forEach(function (a) { a.setAttribute("id", b) }); a.querySelector(".carousel-controls") &&
+                    a.querySelectorAll(".carousel-controls").forEach(function (a) { a.querySelectorAll("a").forEach(function (a) { a.setAttribute("href", "#" + b); c ? a.setAttribute("data-bs-target", "#" + b) : a.setAttribute("data-target", "#" + b) }) }); a.querySelectorAll(".carousel-indicators > li").forEach(function (a) { c ? a.setAttribute("data-bs-target", "#" + b) : a.setAttribute("data-target", "#" + b) }); A(a)
+            } function F(a) {
+                var b = a.querySelectorAll(".carousel-item").length, c = a.querySelector(".carousel-inner").getAttribute("data-visible"); b < c &&
+                    (c = b); a.querySelectorAll(".carousel-inner").forEach(function (a) { a.setAttribute("class", "carousel-inner slides" + c) }); a.querySelectorAll(".clonedCol").forEach(function (a) { a.remove() }); a.querySelectorAll(".carousel-item .col-md-12").forEach(function (a) { 2 > c ? a.setAttribute("class", "col-md-12") : "5" == c ? a.setAttribute("class", "col-md-12 col-lg-15") : a.setAttribute("class", "col-md-12 col-lg-" + 12 / c) }); a.querySelectorAll(".carousel-item .row").forEach(function (a) { a.setAttribute("style", "-webkit-flex-grow: 1; flex-grow: 1; margin: 0;") });
+                a.querySelectorAll(".carousel-item").forEach(function (a) { for (var b = a, m = 1; m < c; m++) { (b = b.nextElementSibling) || (b = a.parentNode.children[0] === a ? a.nextElementSibling : a.parentNode.children[0]); var h; if (h = b) { var d = 0; do d++; while (h = h.previousElementSibling); h = d } else h = -1; d = b.querySelector(".col-md-12").cloneNode(!0); d.classList.add("cloneditem-" + m); d.classList.add("clonedCol"); d.setAttribute("data-cloned-index", h); a.children[0].appendChild(d) } })
+            } function G(a) {
+                var b = "", c = a.querySelector("svg linearGradient");
+                if (c) { for (var b = [], c = Array.from(c.children), e = 0; e < c.length; e++)b.push('"' + c[e].getAttribute("stop-color") + '"'); b = '"lineargradient": [' + b + "],"; Array.from(a.querySelectorAll("svg")).some(function (a) { return a.classList.contains("svg-gradient") }) || a.querySelectorAll("svg").forEach(function (a) { a.classList.add("svg-gradient") }) } return b
+            } function y(a, b, c) {
+                var e = a.closest(".card"), f = e.parentElement.classList; e.getAttribute("style") || e.setAttribute("style", "-webkit-flex-basis: auto; flex-basis: auto;"); f.contains("row") &&
+                    (f.remove("row"), f.add("media-container-row")); a.querySelectorAll(".svg-gradient > *").forEach(function (a) { a.setAttribute("id", b) }); e = a.cloneNode(!0); Array.from(a.children).forEach(function (a) { if ("SVG" !== a.tagName) return a.remove() }); a.setAttribute("data-pie", "{ " + G(a.closest("section")) + ' "percent": ' + c + ', "size": 150, "colorCircle": "#f1f1f1", "stroke": 5, "colorSlice": "url(#' + b + ')", "fontSize": "1.3rem", "number": false }'); Array.from(e.children).forEach(function (b) {
+                        switch (!0) {
+                            case b.matches("p"): b.innerText =
+                                c + "%"; a.appendChild(b); break; case b.matches("svg"): break; default: a.appendChild(b)
+                        }
+                    })
+            } function C(a) { var b = a.closest("section").getAttribute("id") + "-svg-gradient", c = +a.getAttribute("data-goal"); y(a, b, c) } function H(a, b) {
+                if (a.classList.contains("circle-progress-section") && b.includes("progress") && "progressCount" != b) if (b.includes("Color")) a.querySelectorAll(".pie_progress").forEach(function (b) { var c = a.getAttribute("id") + "-svg-gradient", f = +b.getAttribute("data-goal"); y(b, c, f) }); else {
+                    var c = a.getAttribute("id") +
+                        "-svg-gradient", e = a.querySelector("." + b), f = +e.getAttribute("data-goal"); y(e, c, f)
+                }
+            } var d, k, n = "function" == typeof jQuery; n && (d = jQuery); d ? k = d("html").hasClass("is-builder") : k = document.querySelector("html").classList.contains("is-builder"); Element.prototype.parents = function (a) { for (var b = [], c = this, e = void 0 !== a; null !== (c = c.parentElement);)c.nodeType === Node.ELEMENT_NODE && (e && !c.matches(a) || b.push(c)); return b }; Element.prototype.footerReveal = function () {
+                function a() {
+                    !e && b.offsetHeight <= window.outerHeight ? (b.style.zIndex =
+                        "-999", b.style.position = "fixed", b.style.bottom = "0", b.style.width = c.offsetWidth + "px", c.style.marginBottom = b.offsetHeight + "px") : (b.style.zIndex = "", b.style.position = "", b.style.bottom = "", b.style.width = "", c.style.marginBottom = "")
+                } var b = this, c = b.previousElementSibling, e = !!document.documentMode; a(); window.addEventListener("resize", function () { a() }); window.addEventListener("load", function () { a() }); return b
+            }; (function (a) {
+                var b = function (a, b, f) {
+                    var d; return function () {
+                        var h = this, k = arguments; d ? clearTimeout(d) :
+                            f && a.apply(h, k); d = setTimeout(function () { f || a.apply(h, k); d = null }, b || 100)
+                    }
+                }; window[a] = function (c) { var e = new CustomEvent(a); return c ? this.addEventListener("resize", b(c)) : this.dispatchEvent(e) }
+            })("smartresize"); var I = function () {
+                var a = document.createElement("div"), b = document.querySelector("body"); a.setAttribute("style", "height: 50vh; position: absolute; top: -1000px; left: -1000px;"); b.appendChild(a); var c = parseInt(window.innerHeight / 2, 10), e = parseInt((window.getComputedStyle ? getComputedStyle(a, null) : a.currentStyle).height,
+                    10); b.removeChild(a); return e == c
+            }(); r(function () {
+                function a(a) { a.style.height = 9 * x(a.parentNode) / 16 + "px" } function b(a) { setTimeout(function () { q(a, ".mbr-parallax-background").forEach(function (a) { jarallax && (jarallax(a, { speed: .6 }), a.style.position = "relative") }) }, 0) } function c(a) {
+                    q(a, "[data-bg-video]").forEach(function (a) {
+                        var b = a.getAttribute("data-bg-video"); if (b) {
+                            var c = b.match(/(http:\/\/|https:\/\/|)?(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(shorts\/|video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/),
+                                f = a.querySelector(".mbr-background-video-preview") || document.createElement("div"); f.classList.add("mbr-background-video-preview"); f.style.display = "none"; f.style.backgroundSize = "cover"; f.style.backgroundPosition = "center"; a.querySelector(".mbr-background-video-preview") || a.childNodes[0].before(f); if (c && (/youtu\.?be/g.test(c[3]) || /vimeo/g.test(c[3]))) if (c && /youtu\.?be/g.test(c[3])) {
+                                    c[6] = c[6].replace("shorts", "embed"); var b = "http" + ("https:" === location.protocol ? "s" : "") + ":", b = b + ("//img.youtube.com/vi/" +
+                                        c[6] + "/maxresdefault.jpg"), e = new Image; e.onload = function () {
+                                            if (120 === (e.naturalWidth || e.width)) { var b = e.src.split("/").pop(); switch (b) { case "maxresdefault.jpg": e.src = e.src.replace(b, "sddefault.jpg"); break; case "sddefault.jpg": e.src = e.src.replace(b, "hqdefault.jpg"); break; default: k && (f.style.backgroundImage = 'url("images/no-video.jpg")', f.style.display = "block") } } else f.style.backgroundImage = 'url("' + e.src + '")', f.style.display = "block"; a.querySelector(".mbr-background-video") && a.querySelector(".mbr-background-video").remove();
+                                            var g = document.createElement("div"), d = document.createElement("div"), h = document.createElement("div"), l = document.createElement("div"); l.classList.add("mbr-video-foreground"); l.appendChild(g); h.appendChild(l); d.appendChild(h); g.classList.add("mbr-background-video"); a.childNodes[1].before(d); b = new YouTubePlayer(g, { modestBranding: !0, autoplay: !0, controls: !1, origin: "*", iv_load_policy: !1, keyboard: !1, captions: !1, annotations: !1, related: !1 }); d.style.overflow = "hidden"; d.style.position = "absolute"; d.style.width =
+                                                "100%"; d.style.height = "100%"; d.style.top = "0"; d.style.left = "0"; h.style.background = "#000"; h.style.top = "0"; h.style.right = "0"; h.style.bottom = "0"; h.style.left = "0"; l.style.position = "absolute"; l.style.top = "0"; l.style.left = "0"; l.style.width = "100%"; l.style.height = "100%"; l.style.pointerEvents = "none"; g.style.marginTop = "0"; g.style.maxWidth = "initial"; g.style.transitionProperty = "opacity"; g.style.transitionDuration = "1000ms"; g.style.pointerEvents = "none"; g.style.position = "absolute"; g.style.top = "0"; g.style.left = "0";
+                                            g.style.width = "100%"; g.style.height = "100%"; g.parentNode.style.overflow = "hidden"; g.style.transform = "scale(1.2)"; b.load(c[6], !0); b.play(); b.loadPlaylist(); b.setLoop(!0); b.mute(); var h = window.outerWidth, l = window.outerHeight, m = b._opts.width / b._opts.height, g = h, d = Math.ceil(g / m); Math.ceil(-((d - l) / 2)); d < l && (d = l, g = Math.ceil(d * m), Math.ceil(-((g - h) / 2))); b.setSize(g, d)
+                                        }; e.setAttribute("src", b)
+                                } else {
+                                    if (c && /vimeo/g.test(c[3])) {
+                                        var g = new XMLHttpRequest; g.open("GET", "https://vimeo.com/api/v2/video/" + c[6] + ".json",
+                                            !0); g.onreadystatechange = function () { if (4 === this.readyState) if (200 <= this.status && 400 > this.status) { var a = JSON.parse(this.responseText); f.style.backgroundImage = 'url("' + a[0].thumbnail_large + '")'; f.style.display = "block" } else k && (f.style.backgroundImage = 'url("images/no-video.jpg")', f.style.display = "block") }; g.send(); g = null; a.querySelector(".mbr-background-video") && a.querySelector(".mbr-background-video").remove(); g = document.createElement("div"); g.classList.add("mbr-background-video"); a.childNodes[1].before(g);
+                                        b = new Vimeo.Player(g, { id: b, loop: !0, background: !0, responsive: !0, autoplay: !0, byline: !1, title: !1, muted: !0, controls: !1 }); g = b.element.parentNode; g.style.overflow = "hidden"; b.element.style.pointerEvents = "none"; b.element.style.marginLeft = "-" + (b.element.scrollWidth - g.scrollWidth) / 2 + "px"; b.element.style.minHeight = "100vh"; b.element.style.minWidth = "177.77vh"
+                                    }
+                                } else if (k) f.style.backgroundImage = 'url("images/video-placeholder.jpg")', f.style.display = "block"; else if (!k) {
+                                    var g = document.createElement("video"), d = document.createElement("source");
+                                    g.append(d); a.childNodes[1].before(g); d.src = b; g.autoplay = !0; g.loop = !0; g.muted = !0; g.setAttribute("muted", ""); g.playsinline = !0; g.setAttribute("playsinline", ""); g.style.position = "absolute"; g.style.left = "50%"; g.style.top = "50%"; g.style.bottom = "0"; g.style.right = "0"; g.style.minWidth = "100%"; g.style.minHeight = "100%"; g.style.transform = "translateX(-50%) translateY(-50%)"; b = ""; a.querySelector(".mbr-fallback-image") && (b = window.getComputedStyle(a.querySelector(".mbr-fallback-image")).backgroundImage, b = b.match(/\((.*?)\)/)[1].replace(/('|")/g,
+                                        ""), g.setAttribute("poster", b)); g.parentNode.style.overflow = "hidden"
+                                }
+                        }
+                    })
+                } document.querySelector("html").classList.add(t() ? "mobile" : "desktop"); window.addEventListener("scroll", function () { document.querySelectorAll(".mbr-navbar--sticky").forEach(function (a) { var b = 10 < window.scrollTop ? "add" : "remove"; a.classList[b]("mbr-navbar--stuck"); if (!a.classList.contains(".mbr-navbar--open")) a.classList[b]("mbr-navbar--short") }) }); t() && navigator.userAgent.match(/Chrome/i) ? function (a, b) {
+                    var c = [a, a]; c[b > a ? 0 : 1] = b; window.smartresize(function () {
+                        var a =
+                            window.innerHeight; 0 > c.indexOf(a) && (a = c[window.innerWidth > a ? 1 : 0]); var b = document.querySelector(".mbr-section--full-height"); b && (b.style.height = a + "px")
+                    })
+                }(window.innerWidth, window.innerHeight) : I || (window.smartresize(function () { var a = document.querySelector(".mbr-section--full-height"); a && (a.style.height = window.innerHeight + "px") }), document.addEventListener("add.cards", function (a) { document.querySelector("html").classList.contains("mbr-site-loaded") && q(a.target, ".mbr-section--full-height").length && window.dispatchEvent(new CustomEvent("resize")) }));
+                window.addEventListener("smartresize", function () { document.querySelectorAll(".mbr-section--16by9").forEach(a) }); if (n) d(document).on("add.cards changeParameter.cards", function (b) { var c = q(b.target, ".mbr-section--16by9"); c.length ? c.forEach(function (b) { b.setAttribute("data-16by9", "true"); a(b) }) : q(b.target, "[data-16by9]").forEach(function (a) { a.styles.height = ""; a.removeAttribute("data-16by9") }) }); if ("undefined" !== typeof jarallax && !t()) {
+                    window.addEventListener("update.parallax", function (a) {
+                        setTimeout(function () {
+                            if (a) {
+                                var a =
+                                    document.querySelector(".mbr-parallax-background"); a.jarallax("coverImage"); a.jarallax("clipContainer"); a.jarallax("onScroll")
+                            }
+                        }, 0)
+                    }); if (k) {
+                        if (!n) return; d(document).on("add.cards", function (a) { b(a.target); d(window).trigger("update.parallax") }); d(document).on("changeParameter.cards", function (a, c, f, e) {
+                            if ("bg" === c) switch (c = a.target, jarallax && jarallax(c, "destroy"), c.style.position = "", d(a.target).find(".mbr-background-video-preview").remove(), d(a.target).find(".mbr-background-video").remove(), e) {
+                                case "type": !0 ===
+                                    f.parallax && b(a.target); break; case "value": "image" === f.type && !0 === f.parallax && b(a.target); break; case "parallax": !0 === f.parallax && b(a.target)
+                            }d(window).trigger("update.parallax")
+                        })
+                    } else b(document.body); window.addEventListener("shown.bs.tab", function () { window.dispatchEvent(new CustomEvent("update.parallax")) })
+                } var e, f, m = 0, h = null, B = !t(); window.addEventListener("scroll", function () {
+                    f && clearTimeout(f); var a = document.documentElement.scrollTop, b = a <= m || B; m = a; if (h) {
+                        var c = a > h.breakPoint; b ? c != h.fixed && (B ? (h.fixed =
+                            c, h.elm.classList.toggle("is-fixed")) : f = setTimeout(function () { h.fixed = c; h.elm.classList.toggle("is-fixed") }, 40)) : (h.fixed = !1, h.elm.classList.remove("is-fixed"))
+                    }
+                }); if (n) d(document).on("add.cards delete.cards", function (a) { e && clearTimeout(e); e = setTimeout(function () { h && (h.fixed = !1, h.elm.classList.remove("is-fixed")); var a = document.querySelector(".mbr-fixed-top"); a && (h = { breakPoint: w(a).top + 3 * u(a), fixed: !1, elm: a }, a.dispatchEvent(new CustomEvent("scroll"))) }, 650) }); window.smartresize(function () {
+                    document.querySelectorAll(".mbr-embedded-video").forEach(function (a) {
+                        a.style.height =
+                            (x(a) * parseInt(a.getAttribute("height") || 315) / parseInt(a.getAttribute("width") || 560)).toFixed() + "px"
+                    })
+                }); if (n) d(document).on("add.cards", function (a) { document.querySelector("html").classList.contains("mbr-site-loaded") && q(a.target, "iframe").length && window.dispatchEvent(new CustomEvent("resize")) }); if (k) { if (!n) return; d(document).on("add.cards", function (a) { c(a.target) }) } else c(document.body); if (k) d(document).on("changeParameter.cards", function (a, b, f, e) {
+                    if ("bg" === b) switch (e) {
+                        case "type": "video" === f.type &&
+                            c(a.target); break; case "value": "video" === f.type && c(a.target)
+                    }
+                }); document.querySelector("html").classList.add("mbr-site-loaded"); window.dispatchEvent(new CustomEvent("resize")); window.dispatchEvent(new CustomEvent("scroll")); k || document.addEventListener("click", function (a) {
+                    try {
+                        var b = a.target; if (!b.parents().some(function (a) { a.classList.contains("carousel") })) {
+                            do if (b.hash) {
+                                var c = /#bottom|#top/g.test(b.hash); document.querySelectorAll(c ? "body" : b.hash).forEach(function (c) {
+                                    a.preventDefault(); var f = document.querySelector(".navbar-fixed-top"),
+                                        f = "#bottom" == b.hash ? u(c) - window.innerHeight : w(c).top - (f ? 60 : 0); c.classList.contains("panel-collapse") || c.classList.contains("tab-pane") || b.classList.contains("carousel-control") || b.parents(".carousel-controls").length || window.scrollTo({ top: f, left: 0, behavior: "smooth" })
+                                }); break
+                            } while (b = b.parentNode)
+                        }
+                    } catch (f) { }
+                }); document.querySelectorAll(".cols-same-height .mbr-figure").forEach(function (a) {
+                    function b() {
+                        c.style.width = ""; c.style.maxWidth = ""; c.style.marginLeft = ""; if (d && e) {
+                            var h = d / e; a.style.position = "absolute";
+                            a.style.top = "0"; a.style.left = "0"; a.style.right = "0"; a.style.bottom = "0"; var m = u(f) / x(f); m > h && (h = 100 * (m - h) / h, c.style.width = h + 100 + "%", c.style.maxWidth = h + 100 + "%", c.style.marginLeft = -h / 2 + "%")
+                        }
+                    } var c = a.querySelector("img"), f = a.parentNode, e = c.width, d = c.height; c.addEventListener("load", function () { e = c.width; d = c.height; b() }, { once: !0 }); window.addEventListener("resize", b); b()
+                })
+            }); if (!k) {
+                if (n && d.fn.socialLikes) d(document).on("add.cards", function (a) {
+                    q(a.target, ".mbr-social-likes").forEach(function (a) {
+                        a.addEventListener("counter.social-likes",
+                            function (a, b, f) { 999 < f && a.target.querySelectorAll(".social-likes__counter").forEach(function (a) { a.innerHTML = Math.floor(f / 1E3) + "k" }) }); a.socialLikes({ initHtml: !1 })
+                    })
+                }); Array.from(document.body.children).filter(function (a) { return !a.matches("style, script") }).forEach(function (a) { a.classList.contains("mbr-reveal") && a.addEventListener("add.cards", function () { a.footerReveal() }) }); r(function () {
+                    if (!t() && document.querySelectorAll("input[name=animation]").length) {
+                        var a = function () {
+                            var a = document.documentElement.scrollTop ||
+                                document.body.scrollTop, d = a + window.innerHeight - 100; e.forEach(function (e) { var k = e.offsetHeight, g = c(e); (g + k >= a && g - 50 <= d || b(e)) && e.classList.contains("hidden") && (e.classList.remove("hidden"), e.classList.add("animate__fadeInUp"), e.classList.add("animate__delay-1s"), e.addEventListener("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () { e.classList.remove("animate__animated animate__delay-1s animate__fadeInUp") }, { once: !0 })) })
+                        }, b = function (a) {
+                            if (a.parents(".carousel-item").some(function (a) {
+                                return "none" !==
+                                    getComputedStyle(a, null).display
+                            })) return !1; var b = a.parents(".carousel-item").parentNode; if (!b || b.querySelectorAll(".carousel-item.active .hidden.animate__animated").length) return !1; if (1 < b.getAttribute("data-visible")) {
+                                var c = b.getAttribute("data-visible"); if (a.parents().some(function (a) { return a.matches(".cloneditem-" + (c - 1)) }) && a.parents(".cloneditem-" + (c - 1)).some(function (a) { return a.getAttribute("data-cloned-index") >= c })) return !0; a.classList.remove("animate__animated animate__delay-1s hidden");
+                                return !1
+                            } return !0
+                        }, c = function (a) { var b = 0; do b += a.offsetTop || 0, a = a.offsetParent; while (a); return b }; document.querySelectorAll("input[name=animation]").forEach(function (a) { a.remove() }); var e = Array.from(document.querySelectorAll("p, h1, h2, h3, h4, h5, a, button, small, img, li, blockquote, .mbr-author-name, em, label, input, select, textarea, .input-group, .form-control, .iconbox, .btn-social, .mbr-figure, .mbr-map, .mbr-testimonial .card-block, .mbr-price-value, .mbr-price-figure, .dataTable, .dataTables_info")),
+                            e = e.filter(function (a) { if (!a.parents().filter(function (a) { if (a.matches("a, p, .navbar, .mbr-arrow, footer, .iconbox, .mbr-slider, .mbr-gallery, .mbr-testimonial .card-block, #cookiesdirective, .mbr-wowslider, .accordion, .tab-content, .engine, #scrollToTop, .modal")) return !0 }).length) return !0 }), e = e.filter(function (a) { if (!a.parents().filter(function (b) { return b.matches("form") && !a.matches("li") }).length) return !0 }); e.forEach(function (a) {
+                                a.classList.add("hidden"); a.classList.add("animate__animated");
+                                a.classList.add("animate__delay-1s")
+                            }); window.addEventListener("scroll", a); window.addEventListener("resize", a); window.dispatchEvent(new CustomEvent("scroll"))
+                    }
+                })
+            } r(function () { if (document.querySelectorAll(".mbr-arrow-up").length) { var a = document.querySelector("#scrollToTop"); a.style.display = "none"; window.addEventListener("scroll", function () { window.scrollY > window.innerHeight ? E(a) : D(a) }); a.addEventListener("click", function () { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); return !1 }) } }); if (!k) {
+                var p =
+                    document.querySelector(".mbr-arrow"); p && p.addEventListener("click", function (a) { a = a.target.closest("section").nextElementSibling; a.classList.contains("engine") && (a = a.closest("section").nextElementSibling); window.scrollTo(0, w(a).top) })
+            } document.querySelectorAll("nav.navbar").length && (p = u(document.querySelector("nav.navbar")), document.querySelector(".mbr-after-navbar.mbr-fullscreen") && (document.querySelector(".mbr-after-navbar.mbr-fullscreen").style.paddingTop = p + "px")); if (!k && (0 < window.navigator.userAgent.indexOf("MSIE ") ||
+                navigator.userAgent.match(/Trident.*rv\:11\./))) d(document).on("add.cards", function (a) {
+                    var b = a.target; b.classList.contains("mbr-fullscreen") && (a = function () { b.style.height = "auto"; b.offsetHeight <= window.innerHeight && (b.style.height = "1px") }, window.addEventListener("load", a), window.addEventListener("resize", a)); if (b.classList.contains("mbr-slider") || b.classList.contains("mbr-gallery")) b.querySelectorAll(".carousel-indicators").forEach(function (a) {
+                        a.classList.add("ie-fix"); a.querySelectorAll("li").forEach(function (a) {
+                            a.style.display =
+                                "inline-block"; a.style.width = "30px"
+                        })
+                    }), b.classList.contains("mbr-slider") && b.querySelectorAll(".full-screen .slider-fullscreen-image").forEach(function (a) { a.style.height = "1px" })
+                }); r(function () {
+                    if (!k) {
+                        var a = function (a) { a.target && ("VIDEO" == a.target.tagName ? (a.preventDefault(), a.stopPropagation()) : b(a.target)) }, b = function (b) {
+                            var e = b.parents("section")[0].querySelector("iframe"), f = e.getAttribute("src"); b.parents("section").forEach(function (a) { a.style.zIndex = "5000" }); if (f) {
+                                if (-1 !== f.indexOf("youtu") &&
+                                    e.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', "*"), -1 !== f.indexOf("vimeo")) { var d = new Vimeo.Player(e); d.play() }
+                            } else { var h = e.parentNode.querySelector("video"); h && h.play && h.play() } var k = b.parents("section")[0], g = k.querySelector(k.querySelector("[data-modal]").getAttribute("data-modal")); g.style.display = "table"; g.addEventListener("click", function (b) {
+                                "VIDEO" !== b.target.tagName && (f ? (-1 !== f.indexOf("youtu") && e.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}',
+                                    "*"), -1 !== f.indexOf("vimeo") && d.pause()) : (b = e.parentNode.querySelector("video")) && b.pause && b.pause(), g.style.display = "none", g.removeEventListener("click", a), k.style.zIndex = "0")
+                            })
+                        }; document.querySelectorAll(".modalWindow-video > iframe").forEach(function (a) {
+                            var b = a.getAttribute("data-src") || a.getAttribute("src"); if (b) {
+                                a.removeAttribute("data-src"); a.removeAttribute("src"); var f = b.match(/(http:\/\/|https:\/\/|)?(player.|www.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com))\/(shorts\/|video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(&\S+)?/);
+                                if (-1 !== b.indexOf("youtu")) a.setAttribute("src", "https://youtube.com/embed/" + f[6] + "?rel=0&enablejsapi=1"); else if (-1 !== b.indexOf("vimeo")) a.setAttribute("src", "https://player.vimeo.com/video/" + f[6] + "?autoplay=0&loop=0"); else if (/\.mp4|\.webm|\.ogg|\.ogv|\.m4a|\.m4v/.test(b)) {
+                                    f = document.createElement("video"); f.onloadeddata = function (a) { a.target.style.height = a.target.videoHeight > a.target.videoWidth ? window.innerHeight - .2 * window.innerHeight + "px" : "100%" }; var d = a.parents("section")[0].querySelector("img");
+                                    d && f.setAttribute("poster", d.src); f.setAttribute("controls", ""); f.setAttribute("playsinline", ""); f.setAttribute("loop", ""); f.setAttribute("src", b); a.style.display = "none"; f.style.width = "100%"; a.after(f)
+                                }
+                            }
+                        }); document.querySelector("[data-modal]") && document.querySelectorAll("[data-modal]").forEach(function (b) { b.addEventListener("click", a) })
+                    }
+                }); if (!k) {
+                    var p = document.querySelectorAll(".dropdown-toggle.show"), z = document.querySelectorAll(".dropdown-menu.show, .dropdown.open"), J = document.querySelectorAll(".dropdown.open");
+                    p.forEach(function (a) { a.classList.remove("show"); a.ariaExpanded = "false" }); z.forEach(function (a) { return a.classList.remove("show") }); J.forEach(function (a) { return a.classList.remove("open") }); !t() && (p = document.querySelector("section.menu")) && (z = window.innerWidth, !p.querySelector(".navbar").classList.contains("collapsed") && 991 < z && (p.querySelectorAll("ul.navbar-nav li.dropdown").forEach(function (a) {
+                        a.addEventListener("mouseover", function () { a.classList.contains("open") || a.querySelector("a").dispatchEvent(new Event("click")) });
+                        a.addEventListener("mouseout", function () { a.classList.contains("open") && a.querySelector("a").dispatchEvent(new Event("click")) })
+                    }), p.querySelectorAll("ul.navbar-nav li.dropdown .dropdown-menu .dropdown").forEach(function (a) {
+                        a.addEventListener("mouseover", function () { a.classList.contains("open") || (a.querySelector("a").dispatchEvent(new Event("click")), a.classList.add("open")) }); a.addEventListener("mouseout", function () {
+                            a.classList.contains("open") && (a.querySelector("a").dispatchEvent(new Event("click")),
+                                a.classList.remove("open"))
+                        })
+                    })))
+                } k || ("undefined" === typeof window.initClientPlugin && 0 != document.body.querySelectorAll(".clients").length && (window.initClientPlugin = !0, document.body.querySelectorAll(".clients").forEach(function (a) { a.getAttribute("data-isinit") || (v(a), F(a)) })), "undefined" === typeof window.initPopupBtnPlugin && 0 != document.body.querySelectorAll("section.popup-btn-cards").length && (window.initPopupBtnPlugin = !0, document.querySelectorAll("section.popup-btn-cards .card-wrapper").forEach(function (a) { a.classList.add("popup-btn") })),
+                    "undefined" === typeof window.initTestimonialsPlugin && 0 != document.body.querySelectorAll(".testimonials-slider").length && (window.initTestimonialsPlugin = !0, document.querySelectorAll(".testimonials-slider").forEach(function (a) { v(a) })), "undefined" === typeof window.initSwitchArrowPlugin && (window.initSwitchArrowPlugin = !0, r(function () {
+                        0 != document.querySelectorAll(".accordionStyles").length && document.querySelectorAll('.accordionStyles > .card > .card-header > a[role="button"]').forEach(function (a) {
+                            a.classList.contains("collapsed") ||
+                                a.classList.add("collapsed")
+                        })
+                    }), document.querySelectorAll('.accordionStyles > .card > .card-header > a[role="button"]').forEach(function (a) {
+                        a.addEventListener("click", function () {
+                            var b = a.closest(".accordionStyles").getAttribute("id"), c = a.closest(".card").querySelector(".panel-collapse"), d = a.querySelector("span.sign") ? a.querySelector("span.sign") : a.querySelector("span.mbr-iconfont"); !c.classList.contains("collapsing") || -1 == b.indexOf("toggle") && -1 == b.indexOf("accordion") || (a.classList.contains("collapsed") ?
+                                (d.classList.remove("mbri-arrow-up"), d.classList.add("mbri-arrow-down")) : (d.classList.remove("mbri-arrow-down"), d.classList.add("mbri-arrow-up")), -1 != b.indexOf("accordion") && (b = a.closest(".accordionStyles"), Array.from(b.children).filter(function (a) { return a.querySelector("span.sign") !== d }).forEach(function (a) { a = a.querySelector("span.sign") ? a.querySelector("span.sign") : a.querySelector("span.mbr-iconfont"); a.classList.remove("mbri-arrow-up"); a.classList.add("mbri-arrow-down") })))
+                        })
+                    })), 0 != document.querySelectorAll(".mbr-slider.carousel").length &&
+                    document.querySelectorAll(".mbr-slider.carousel").forEach(function (a) {
+                        var b = a.querySelectorAll(".carousel-control"), c = a.querySelectorAll(".carousel-indicators li"), e = function (a) { a.stopPropagation(); a.preventDefault() }; a.addEventListener("slide.bs.carousel", function () { b.forEach(function (a) { a.addEventListener("click", e) }); c.forEach(function (a) { a.addEventListener("click", e) }); n && d(a).carousel({ keyboard: !1 }) }); a.addEventListener("slid.bs.carousel", function () {
+                            b.forEach(function (a) {
+                                a.removeEventListener("click",
+                                    e)
+                            }); c.forEach(function (a) { a.removeEventListener("click", e) }); n && d(a).carousel({ keyboard: !0 }); 1 < a.querySelectorAll(".carousel-item.active").length && (a.querySelectorAll(".carousel-item.active")[1].classList.remove("active"), a.querySelectorAll(".carousel-control li.active")[1].classList.remove("active"))
+                        })
+                    })); if (k) {
+                        if (!n) return; d(document).on("add.cards", function (a) {
+                            d(a.target).find(".form-with-styler").length && (a = d(a.target).find(".form-with-styler"), d(a).find('select:not("[multiple]")').each(function () {
+                                d(this).styler &&
+                                    d(this).styler()
+                            }), d(a).find("input[type=number]").each(function () { d(this).styler && (d(this).styler(), d(this).parent().parent().removeClass("form-control")) }), d(a).find("input[type=date]").each(function () { d(this).datetimepicker && d(this).datetimepicker({ format: "Y-m-d", timepicker: !1 }) }), d(a).find("input[type=time]").each(function () { d(this).datetimepicker && d(this).datetimepicker({ format: "H:i", datepicker: !1 }) }))
+                        })
+                    } document.querySelectorAll('input[type="range"]').forEach(function (a) {
+                        a.addEventListener("change",
+                            function (a) { a.target.parents(".form-group").forEach(function (c) { c.querySelector(".value").innerHTML = a.target.value }) })
+                    }); if (k) d(document).on("add.cards changeParameter.cards", function (a, b) { "undefined" !== typeof CircularProgressBar && new CircularProgressBar("pie_progress"); b ? H(a.target, b) : a.target.querySelectorAll(".pie_progress").length && a.target.querySelectorAll(".pie_progress").forEach(function (a) { C(a) }) }); else document.querySelectorAll(".pie_progress").length && ("undefined" !== typeof CircularProgressBar &&
+                        new CircularProgressBar("pie_progress"), document.querySelectorAll(".pie_progress").forEach(function (a) { C(a) })); if (k && n) d(document).on("add.cards", function (a) { d(a.target).hasClass("testimonials-slider") && v(a.target) }).on("changeParameter.cards", function (a, b, c) { "testimonialsSlides" === b && 0 == d(a.target).find(".carousel-item.active").length && A(a.target) }); else "undefined" === typeof window.initTestimonialsPlugin && (window.initTestimonialsPlugin = !0, document.querySelectorAll(".testimonials-slider").forEach(function (a) { v(a) }));
+            r(function () { k || Array.from(document.body.children).filter(function (a) { return !a.matches("style, script") }).forEach(function (a) { if (window.Event && "function" === typeof window.Event) var b = new Event("add.cards"); else b = document.createEvent("CustomEvent"), b.initEvent("add.cards", !0, !0); a.dispatchEvent(b) }) })
+        })();
+
+    </script>
+
+
+
+</body>
+
+
+<style>
+    @charset "UTF-8";
+
+    section {
+        background-color: #fff
+    }
+
+    body {
+        font-style: normal;
+        line-height: 1.5;
+        font-weight: 400;
+        color: #232323;
+        position: relative
+    }
+
+    button {
+        background-color: transparent;
+        border-color: transparent
+    }
+
+    .container,
+    .container-fluid,
+    section {
+        position: relative;
+        word-wrap: break-word
+    }
+
+    a.mbr-iconfont:hover {
+        text-decoration: none
+    }
+
+    a {
+        font-style: normal;
+        font-weight: 400;
+        cursor: pointer
+    }
+
+    a,
+    a:hover {
+        text-decoration: none
+    }
+
+    .mbr-section-title {
+        font-style: normal;
+        line-height: 1.3
+    }
+
+    .mbr-section-subtitle {
+        line-height: 1.3
+    }
+
+    .mbr-text {
+        font-style: normal;
+        line-height: 1.7
+    }
+
+    .display-1,
+    .display-2,
+    .display-4,
+    .display-5,
+    .display-7,
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+        line-height: 1;
+        word-break: break-word;
+        word-wrap: break-word;
+        font-weight: 400
+    }
+
+    b,
+    strong {
+        font-weight: 700
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:active,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:hover {
+        transition-delay: 9999s;
+        -webkit-transition-property: background-color, color;
+        transition-property: background-color, color
+    }
+
+    textarea[type=hidden] {
+        display: none
+    }
+
+    section {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+
+    section .mbr-background-video,
+    section .mbr-background-video-preview {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0
+    }
+
+    .hidden {
+        visibility: hidden
+    }
+
+    .mbr-z-index20 {
+        z-index: 20
+    }
+
+    /*! Base colors */
+    .mbr-white {
+        color: #fff
+    }
+
+    .mbr-black {
+        color: #111
+    }
+
+    .mbr-bg-white {
+        background-color: #fff
+    }
+
+    .mbr-bg-black {
+        background-color: #000
+    }
+
+    /*! Text-aligns */
+    .align-left {
+        text-align: left
+    }
+
+    .align-center {
+        text-align: center
+    }
+
+    .align-right {
+        text-align: right
+    }
+
+    /*! Font-weight  */
+    /*! Media  */
+    .media-content {
+        flex-basis: 100%
+    }
+
+    .media-container-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: start
+    }
+
+    .media-container-row .media-size-item {
+        width: 400px
+    }
+
+    @media (min-width:992px) {
+        .media-container-row {
+            flex-wrap: nowrap
+        }
+    }
+
+    figure {
+        margin-bottom: 0;
+        overflow: hidden
+    }
+
+    figure[mbr-media-size] {
+        transition: width .1s
+    }
+
+    iframe,
+    img {
+        display: block;
+        width: 100%
+    }
+
+    .card {
+        background-color: transparent;
+        border: none
+    }
+
+    .card-img {
+        text-align: center;
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0
+    }
+
+    .media {
+        max-width: 100%;
+        margin: 0 auto
+    }
+
+    .mbr-figure {
+        align-self: center
+    }
+
+    .media-container>div {
+        max-width: 100%
+    }
+
+    .card-img img,
+    .mbr-figure img {
+        width: 100%
+    }
+
+    @media (max-width:991px) {
+        .media-size-item {
+            width: auto !important
+        }
+
+        .media {
+            width: auto
+        }
+
+        .mbr-figure {
+            width: 100% !important
+        }
+    }
+
+    /*! Buttons */
+    .mbr-section-btn {
+        margin-left: -.6rem;
+        margin-right: -.6rem;
+        font-size: 0
+    }
+
+    .btn {
+        font-weight: 300;
+        border-width: 1px;
+        font-style: normal;
+        margin: .6rem .6rem;
+        white-space: normal;
+        transition: all .2s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        word-break: break-word
+    }
+
+    .btn-md {
+        font-weight: 300;
+        letter-spacing: 0;
+        transition: all .3s ease-in-out
+    }
+
+    .btn-lg {
+        font-weight: 300;
+        letter-spacing: 0;
+        transition: all .3s ease-in-out
+    }
+
+    .btn-form {
+        margin: 0
+    }
+
+    .btn-form:hover {
+        cursor: pointer
+    }
+
+    nav .mbr-section-btn {
+        margin-left: 0;
+        margin-right: 0
+    }
+
+    /*! Btn icon margin */
+    .btn .mbr-iconfont {
+        order: 1;
+        cursor: pointer;
+        margin-left: .5rem;
+        vertical-align: sub
+    }
+
+    .btn.btn-md .mbr-iconfont {
+        margin-left: .8rem
+    }
+
+    [type=submit] {
+        -webkit-appearance: none
+    }
+
+    /*! Full-screen */
+    .mbr-fullscreen .mbr-overlay {
+        min-height: 100vh
+    }
+
+    .mbr-fullscreen {
+        display: flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        align-items: center;
+        min-height: 100vh;
+        padding-top: 3rem;
+        padding-bottom: 3rem
+    }
+
+    /*! Map */
+    .map {
+        height: 25rem;
+        position: relative
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 100%
+    }
+
+    /*! Scroll to top arrow */
+    .mbr-arrow-up {
+        bottom: 25px;
+        right: 90px;
+        position: fixed;
+        text-align: right;
+        z-index: 5000;
+        color: #fff;
+        font-size: 22px
+    }
+
+    .mbr-arrow-up a {
+        background: rgba(0, 0, 0, .2);
+        border-radius: 50%;
+        color: #fff;
+        display: inline-block;
+        height: 60px;
+        width: 60px;
+        border: 2px solid #fff;
+        outline-style: none !important;
+        position: relative;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        text-align: center
+    }
+
+    .mbr-arrow-up a:hover {
+        background-color: rgba(0, 0, 0, .4)
+    }
+
+    .mbr-arrow-up a i {
+        line-height: 60px
+    }
+
+    .mbr-arrow-up-icon {
+        display: block;
+        color: #fff
+    }
+
+    .mbr-arrow-up-icon::before {
+        content: "›";
+        display: inline-block;
+        font-family: serif;
+        font-size: 22px;
+        line-height: 1;
+        font-style: normal;
+        position: relative;
+        top: 6px;
+        left: -4px;
+        transform: rotate(-90deg)
+    }
+
+    /*! Arrow Down */
+    .mbr-arrow {
+        position: absolute;
+        bottom: 45px;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        background-color: rgba(80, 80, 80, .5);
+        border-radius: 50%;
+        transform: translateX(-50%)
+    }
+
+    @media (max-width:767px) {
+        .mbr-arrow {
+            display: none
+        }
+    }
+
+    .mbr-arrow>a {
+        display: inline-block;
+        text-decoration: none;
+        outline-style: none;
+        -webkit-animation: arrowdown 1.7s ease-in-out infinite;
+        animation: arrowdown 1.7s ease-in-out infinite;
+        color: #fff
+    }
+
+    .mbr-arrow>a>i {
+        position: absolute;
+        top: -2px;
+        left: 15px;
+        font-size: 2rem
+    }
+
+    #scrollToTop a i::before {
+        content: "";
+        position: absolute;
+        display: block;
+        border-bottom: 2.5px solid #fff;
+        border-left: 2.5px solid #fff;
+        width: 27.8%;
+        height: 27.8%;
+        left: 50%;
+        top: 51%;
+        transform: translateY(-30%) translateX(-50%) rotate(135deg)
+    }
+
+    @keyframes arrowdown {
+        0% {
+            transform: translateY(0)
+        }
+
+        50% {
+            transform: translateY(-5px)
+        }
+
+        100% {
+            transform: translateY(0)
+        }
+    }
+
+    @-webkit-keyframes arrowdown {
+        0% {
+            transform: translateY(0)
+        }
+
+        50% {
+            transform: translateY(-5px)
+        }
+
+        100% {
+            transform: translateY(0)
+        }
+    }
+
+    @media (max-width:500px) {
+        .mbr-arrow-up {
+            left: 0;
+            right: 0;
+            text-align: center
+        }
+    }
+
+    @keyframes gradient-animation {
+        from {
+            background-position: 0 100%;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out
+        }
+
+        to {
+            background-position: 100% 0;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out
+        }
+    }
+
+    @-webkit-keyframes gradient-animation {
+        from {
+            background-position: 0 100%;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out
+        }
+
+        to {
+            background-position: 100% 0;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out
+        }
+    }
+
+    .bg-gradient {
+        background-size: 200% 200%;
+        animation: gradient-animation 5s infinite alternate;
+        -webkit-animation: gradient-animation 5s infinite alternate
+    }
+
+    @media (max-width:991px) {
+        .menu .navbar-collapse {
+            max-height: 93.5vh
+        }
+
+        .menu .navbar-collapse.show {
+            overflow: auto
+        }
+    }
+
+    @media (min-width:992px) {
+        .menu .navbar-nav.nav-dropdown {
+            display: -webkit-flex
+        }
+
+        .menu .collapsed .navbar-collapse {
+            max-height: 93.5vh
+        }
+
+        .menu .collapsed .navbar-collapse.show {
+            overflow: auto
+        }
+    }
+
+    @media (max-width:767px) {
+        .menu .navbar-collapse {
+            max-height: 80vh
+        }
+    }
+
+    .nav-link .mbr-iconfont {
+        margin-right: .5rem
+    }
+
+    .navbar {
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap;
+        -webkit-align-items: center;
+        -webkit-justify-content: space-between
+    }
+
+    .navbar-collapse {
+        -webkit-flex-basis: 100%;
+        -webkit-flex-grow: 1;
+        -webkit-align-items: center
+    }
+
+    .nav-dropdown .link {
+        padding: .667em 1.667em !important;
+        margin: 0 !important
+    }
+
+    .nav {
+        display: -webkit-flex;
+        -webkit-flex-wrap: wrap
+    }
+
+
+
+    .justify-content-center {
+        -webkit-justify-content: center
+    }
+
+    .form-inline {
+        display: -webkit-flex
+    }
+
+    .card-wrapper {
+        -webkit-flex: 1
+    }
+
+    .carousel-control {
+        z-index: 10;
+        display: -webkit-flex
+    }
+
+    .carousel-controls {
+        display: -webkit-flex
+    }
+
+    .media {
+        display: -webkit-flex
+    }
+
+    .form-group:focus {
+        outline: 0
+    }
+
+    input[type=range] {
+        padding-left: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .modal-content {
+        height: 100%
+    }
+
+    .carousel-item {
+        text-align: center
+    }
+
+    .carousel-item img {
+        margin: auto
+    }
+
+    .card-img {
+        width: auto
+    }
+
+    .carousel-item-next,
+    .carousel-item.active {
+        display: flex
+    }
+
+    body,
+    html {
+        height: auto;
+        min-height: 100vh
+    }
+
+    .form-control-label {
+        position: relative;
+        cursor: pointer;
+        margin-bottom: .357em;
+        padding: 0
+    }
+
+    .form-control {
+        background-color: #fff;
+        background-clip: border-box;
+        color: #232323;
+        line-height: 1rem !important;
+        height: auto;
+        padding: .6rem 1.2rem;
+        transition: border-color .25s ease 0s;
+        border: 1px solid transparent !important;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, .07) 0 1px 1px 0, rgba(0, 0, 0, .07) 0 1px 3px 0, rgba(0, 0, 0, .03) 0 0 0 1px
+    }
+
+    .form-active .form-control:invalid {
+        border-color: red
+    }
+
+
+
+    form .mbr-section-btn {
+        margin: 0;
+        padding-left: .6rem;
+        padding-right: .6rem
+    }
+
+    form .btn {
+        display: flex;
+        padding: .6rem 1.2rem;
+        margin: 0
+    }
+
+    textarea.form-control {
+        line-height: 1.5rem !important
+    }
+
+    .form-group {
+        margin-bottom: 1.2rem
+    }
+
+    .form-control,
+    form .btn {
+        min-height: 48px
+    }
+
+    .form-control:focus {
+        box-shadow: none
+    }
+
+    :focus {
+        outline: 0
+    }
+
+    .mbr-overlay {
+        background-color: #000;
+        bottom: 0;
+        left: 0;
+        opacity: .5;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+        pointer-events: none
+    }
+
+    blockquote {
+        font-style: italic;
+        padding: 3rem;
+        font-size: 1.09rem;
+        position: relative;
+        border-left: 3px solid
+    }
+
+    blockquote,
+    ul {
+        margin-bottom: 2.3125rem
+    }
+
+    .mt-4 {
+        margin-top: 2rem !important
+    }
+
+    .mb-4 {
+        margin-bottom: 2rem !important
+    }
+
+
+    @media (min-width:768px) {
+        .container-fluid {
+            padding-left: 32px;
+            padding-right: 32px
+        }
+    }
+
+    @media (min-width:768px) and (max-width:991px) {
+        .mbr-container {
+            padding-left: 32px;
+            padding-right: 32px
+        }
+    }
+
+    @media (max-width:767px) {
+        .mbr-container {
+            padding-left: 16px;
+            padding-right: 16px
+        }
+    }
+
+    .card-wrapper,
+    .item-wrapper {
+        overflow: hidden
+    }
+
+    .app-video-wrapper>img {
+        opacity: 1
+    }
+
+    .item {
+        position: relative
+    }
+
+    .dropdown-menu .dropdown-menu {
+        left: 100%
+    }
+
+    .dropdown-item+.dropdown-menu {
+        display: none
+    }
+
+    .dropdown-item:hover+.dropdown-menu,
+    .dropdown-menu:hover {
+        display: block
+    }
+
+    @media (min-aspect-ratio:16/9) {
+        .mbr-video-foreground {
+            height: 300% !important;
+            top: -100% !important
+        }
+    }
+
+    @media (max-aspect-ratio:16/9) {
+        .mbr-video-foreground {
+            width: 300% !important;
+            left: -100% !important
+        }
+    }
+
+    body {
+        font-family: Unbounded
+    }
+
+    .display-1 {
+        font-family: Montserrat, sans-serif;
+        font-size: 5rem;
+        line-height: 1.1;
+        letter-spacing: -.01em
+    }
+
+    .display-1>.mbr-iconfont {
+        font-size: 6.25rem
+    }
+
+    .display-2 {
+        font-family: Montserrat, sans-serif;
+        font-size: 3rem;
+        line-height: 1.1;
+        letter-spacing: -.01em
+    }
+
+    .display-2>.mbr-iconfont {
+        font-size: 3.75rem
+    }
+
+    .display-4 {
+        font-family: Nunito, sans-serif;
+        font-size: 1.2rem;
+        line-height: 1;
+        font-weight: 300
+    }
+
+    .display-4>.mbr-iconfont {
+        font-size: 1.5rem
+    }
+
+    .display-5 {
+        font-family: Montserrat, sans-serif;
+        font-size: 2rem;
+        line-height: 1;
+        font-weight: 300
+    }
+
+    .display-5>.mbr-iconfont {
+        font-size: 2.5rem
+    }
+
+    .display-7 {
+        font-family: Nunito, sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.33;
+        font-weight: 300
+    }
+
+    .display-7>.mbr-iconfont {
+        font-size: 1.875rem
+    }
+
+    @media (max-width:992px) {
+        .display-1 {
+            font-size: 4rem
+        }
+    }
+
+    @media (max-width:768px) {
+        .display-1 {
+            font-size: 3.5rem;
+            font-size: calc(2.4rem + (5 - 2.4) * ((100vw - 20rem)/ (48 - 20)));
+            line-height: calc(1.1 * (2.4rem + (5 - 2.4) * ((100vw - 20rem)/ (48 - 20))))
+        }
+
+        .display-2 {
+            font-size: 2.4rem;
+            font-size: calc(1.7rem + (3 - 1.7) * ((100vw - 20rem)/ (48 - 20)));
+            line-height: calc(1.3 * (1.7rem + (3 - 1.7) * ((100vw - 20rem)/ (48 - 20))))
+        }
+
+        .display-4 {
+            font-size: .96rem;
+            font-size: calc(1.07rem + (1.2 - 1.07) * ((100vw - 20rem)/ (48 - 20)));
+            line-height: calc(1.4 * (1.07rem + (1.2 - 1.07) * ((100vw - 20rem)/ (48 - 20))))
+        }
+
+        .display-5 {
+            font-size: 1.6rem;
+            font-size: calc(1.35rem + (2 - 1.35) * ((100vw - 20rem)/ (48 - 20)));
+            line-height: calc(1.4 * (1.35rem + (2 - 1.35) * ((100vw - 20rem)/ (48 - 20))))
+        }
+
+        .display-7 {
+            font-size: 1.2rem;
+            font-size: calc(1.175rem + (1.5 - 1.175) * ((100vw - 20rem)/ (48 - 20)));
+            line-height: calc(1.4 * (1.175rem + (1.5 - 1.175) * ((100vw - 20rem)/ (48 - 20))))
+        }
+    }
+
+    .btn {
+        padding: .6rem 1.2rem;
+        border-radius: 0
+    }
+
+    .btn-md {
+        padding: .6rem 1.2rem;
+        border-radius: 0
+    }
+
+    .btn-lg {
+        padding: 1rem 2.6rem;
+        border-radius: 0
+    }
+
+    .bg-success {
+        background-color: #40b0bf !important
+    }
+
+    .bg-info {
+        background-color: #fff !important
+    }
+
+    .btn-info,
+    .btn-info:active {
+        background-color: #fff !important;
+        border-color: #fff !important;
+        color: grey !important;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2)
+    }
+
+    .btn-info.active,
+    .btn-info:focus,
+    .btn-info:hover {
+        color: #545454 !important;
+        background-color: #d4d4d4 !important;
+        border-color: #d4d4d4 !important;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2)
+    }
+
+    .btn-info:disabled {
+        color: grey !important;
+        background-color: #d4d4d4 !important;
+        border-color: #d4d4d4 !important
+    }
+
+    .btn-success,
+    .btn-success:active {
+        background-color: #40b0bf !important;
+        border-color: #40b0bf !important;
+        color: #fff !important;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2)
+    }
+
+    .btn-success.active,
+    .btn-success:focus,
+    .btn-success:hover {
+        color: #fff !important;
+        background-color: #2a747e !important;
+        border-color: #2a747e !important;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2)
+    }
+
+    .btn-success:disabled {
+        color: #fff !important;
+        background-color: #2a747e !important;
+        border-color: #2a747e !important
+    }
+
+    .btn-white,
+    .btn-white:active {
+        background-color: #fafafa !important;
+        border-color: #fafafa !important;
+        color: #7a7a7a !important;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2)
+    }
+
+    .btn-white.active,
+    .btn-white:focus,
+    .btn-white:hover {
+        color: #4f4f4f !important;
+        background-color: #cfcfcf !important;
+        border-color: #cfcfcf !important;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2)
+    }
+
+    .btn-white:disabled {
+        color: #7a7a7a !important;
+        background-color: #cfcfcf !important;
+        border-color: #cfcfcf !important
+    }
+
+    .btn-black,
+    .btn-black:active {
+        background-color: #232323 !important;
+        border-color: #232323 !important;
+        color: #fff !important;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2)
+    }
+
+    .btn-black.active,
+    .btn-black:focus,
+    .btn-black:hover {
+        color: #fff !important;
+        background-color: #000 !important;
+        border-color: #000 !important;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2)
+    }
+
+    .btn-black:disabled {
+        color: #fff !important;
+        background-color: #000 !important;
+        border-color: #000 !important
+    }
+
+    .btn-info-outline,
+    .btn-info-outline:active {
+        background-color: transparent !important;
+        border-color: transparent;
+        color: #fff
+    }
+
+    .btn-info-outline.active,
+    .btn-info-outline:focus,
+    .btn-info-outline:hover {
+        color: #d4d4d4 !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important
+    }
+
+    .btn-info-outline:disabled {
+        color: grey !important;
+        background-color: #fff !important;
+        border-color: #fff !important
+    }
+
+    .btn-success-outline,
+    .btn-success-outline:active {
+        background-color: transparent !important;
+        border-color: transparent;
+        color: #40b0bf
+    }
+
+    .btn-success-outline.active,
+    .btn-success-outline:focus,
+    .btn-success-outline:hover {
+        color: #2a747e !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important
+    }
+
+    .btn-success-outline:disabled {
+        color: #fff !important;
+        background-color: #40b0bf !important;
+        border-color: #40b0bf !important
+    }
+
+    .btn-black-outline,
+    .btn-black-outline:active {
+        background-color: transparent !important;
+        border-color: transparent;
+        color: #232323
+    }
+
+    .btn-black-outline.active,
+    .btn-black-outline:focus,
+    .btn-black-outline:hover {
+        color: #000 !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important
+    }
+
+    .btn-black-outline:disabled {
+        color: #fff !important;
+        background-color: #232323 !important;
+        border-color: #232323 !important
+    }
+
+    .btn-white-outline,
+    .btn-white-outline:active {
+        background-color: transparent !important;
+        border-color: transparent;
+        color: #fafafa
+    }
+
+    .btn-white-outline.active,
+    .btn-white-outline:focus,
+    .btn-white-outline:hover {
+        color: #cfcfcf !important;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        box-shadow: none !important
+    }
+
+    .btn-white-outline:disabled {
+        color: #7a7a7a !important;
+        background-color: #fafafa !important;
+        border-color: #fafafa !important
+    }
+
+    .text-success {
+        color: #40b0bf !important
+    }
+
+    .text-info {
+        color: #fff !important
+    }
+
+    .text-white {
+        color: #fafafa !important
+    }
+
+    .text-black {
+        color: #232323 !important
+    }
+
+    a.text-success.active,
+    a.text-success:focus,
+    a.text-success:hover {
+        color: #266a73 !important
+    }
+
+    a.text-info.active,
+    a.text-info:focus,
+    a.text-info:hover {
+        color: #ccc !important
+    }
+
+    a.text-white.active,
+    a.text-white:focus,
+    a.text-white:hover {
+        color: #c7c7c7 !important
+    }
+
+    a.text-black.active,
+    a.text-black:focus,
+    a.text-black:hover {
+        color: #000 !important
+    }
+
+    .mbr-gallery-filter li.active .btn {
+        background-color: #495dff;
+        border-color: #495dff;
+        color: #fff
+    }
+
+    .mbr-gallery-filter li.active .btn:focus {
+        box-shadow: none
+    }
+
+    a,
+    a:hover {
+        color: #495dff
+    }
+
+    .form-control {
+        font-family: Nunito, sans-serif;
+        font-size: 1.2rem;
+        line-height: 1;
+        font-weight: 300;
+        font-weight: 400
+    }
+
+    .form-control>.mbr-iconfont {
+        font-size: 1.5rem
+    }
+
+    .form-control:focus,
+    .form-control:hover {
+        box-shadow: rgba(0, 0, 0, .07) 0 1px 1px 0, rgba(0, 0, 0, .07) 0 1px 3px 0, rgba(0, 0, 0, .03) 0 0 0 1px;
+        border-color: #495dff !important
+    }
+
+    .form-control:-webkit-input-placeholder {
+        font-family: Nunito, sans-serif;
+        font-size: 1.2rem;
+        line-height: 1;
+        font-weight: 300;
+        font-weight: 400
+    }
+
+    .form-control:-webkit-input-placeholder>.mbr-iconfont {
+        font-size: 1.5rem
+    }
+
+    blockquote {
+        border-color: #495dff
+    }
+
+    body {
+        overflow-x: hidden
+    }
+
+    a {
+        transition: color .6s
+    }
+
+    .mbr-section-btn .btn {
+        box-shadow: none;
+        border: none;
+        border-radius: 0
+    }
+
+    .mbr-section-btn .btn-black-outline,
+    .mbr-section-btn .btn-info-outline,
+    .mbr-section-btn .btn-success-outline,
+    .mbr-section-btn .btn-white-outline {
+        position: relative;
+        padding: 0
+    }
+
+    .mbr-section-btn .btn-black-outline:hover::before,
+    .mbr-section-btn .btn-info-outline:hover::before,
+    .mbr-section-btn .btn-success-outline:hover::before,
+    .mbr-section-btn .btn-white-outline:hover::before {
+        width: 0
+    }
+
+    .mbr-section-btn .btn-black-outline::before,
+    .mbr-section-btn .btn-info-outline::before,
+    .mbr-section-btn .btn-success-outline::before,
+    .mbr-section-btn .btn-white-outline::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: -2px;
+        transition: all .3s ease
+    }
+
+    .mbr-section-btn .btn-success-outline::before {
+        background-color: #40b0bf
+    }
+
+    .mbr-section-btn .btn-info-outline::before {
+        background-color: #fff
+    }
+
+    .mbr-section-btn .btn-black-outline::before {
+        background-color: #000
+    }
+
+    .mbr-section-btn .btn-white-outline::before {
+        background-color: #fff
+    }
+
+    .cid-tD2ttjseYb {
+        padding-top: 2rem;
+        padding-bottom: 0;
+        background-color: #bbb
+    }
+
+    .cid-tD2ttjseYb .mbr-fallback-image {
+        display: block;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0
+    }
+
+    .cid-tD2ttjseYb .container-fluid {
+        padding: 0 22px
+    }
+
+    @media (max-width:992px) {
+        .cid-tD2ttjseYb .container-fluid {
+            padding: 0 16px
+        }
+    }
+
+
+    @media (max-width:992px) {
+        .cid-tD2ttjseYb .title-wrapper {
+            margin-bottom: 80px
+        }
+    }
+
+    @media (max-width:768px) {
+        .cid-tD2ttjseYb .title-wrapper {
+            margin-bottom: 48px
+        }
+    }
+
+    .cid-tD2ttjseYb .title-wrapper .mbr-section-subtitle {
+        margin-bottom: 10px
+    }
+
+    .cid-tD2ttjseYb .title-wrapper .mbr-section-title {
+        margin-bottom: 0
+    }
+
+    .cid-tD2ttjseYb .phone-wrapper a:hover .mbr-phone {
+        opacity: .5
+    }
+
+    .cid-tD2ttjseYb .phone-wrapper a .mbr-phone {
+        margin-bottom: 20px;
+        transition: all .3s ease
+    }
+
+    @media (max-width:992px) {
+        .cid-tD2ttjseYb .phone-wrapper a .mbr-phone {
+            text-align: center
+        }
+    }
+
+    .cid-tD2ttjseYb .link-wrapper a:hover .mbr-link {
+        opacity: .5
+    }
+
+    .cid-tD2ttjseYb .link-wrapper a .mbr-link {
+        margin-bottom: 20px;
+        transition: all .3s ease
+    }
+
+    @media (max-width:992px) {
+        .cid-tD2ttjseYb .link-wrapper a .mbr-link {
+            text-align: center
+        }
+    }
+
+    .cid-tD2ttjseYb .mbr-section-subtitle {
+        color: #f1f2f4;
+        text-align: center
+    }
+
+    .cid-tD2ttjseYb .mbr-section-title {
+        color: #fff;
+        text-align: center
+    }
+
+    .cid-tD2ttjseYb .mbr-phone {
+        color: #fff
+    }
+
+    .cid-tD2ttjseYb .copyright {
+        color: #f1f2f4;
+        text-align: center
+    }
+
+    .cid-tD2ttjseYb .mbr-link {
+        color: #fff;
+        text-align: right
+    }
+
+    .cid-tD2ttjseYb .logo-flowch {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 15px
+    }
+
+    .background {
+        position: relative;
+        background-color: #000;
+        height: 75vh;
+        min-height: 600px;
+        width: 100%;
+        color: #fff !important;
+        overflow: hidden;
+        padding-top: 2.5rem;
+        padding-bottom: 10rem;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        background-image: url(https://www.montecristocorretora.com.br/app/modules/institutional_montecristo/img/background_1.jpg)
+    }
+
+    .background video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%)
+    }
+
+    .background .background-img {
+        position: absolute;
+        left: 0;
+        top: 0
+    }
+
+    .background .cont {
+        position: relative;
+        z-index: 2
+    }
+
+    .background .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: .7;
+        background-color: #254a72;
+        z-index: 1
+    }
+
+    .buttoms {
+        flex: 1;
+        font-family: Montserrat, sans-serif
+    }
+
+    @media screen and (max-width:575px) {
+        .buttoms {
+            right: 0
+        }
+    }
+
+    .buttoms .buttom-language-icon-container .buttom {
+        height: 40px;
+        width: 40px;
+        margin-right: 5px;
+        cursor: pointer;
+        color: #7e0505
+    }
+
+    @media screen and (max-width:575px) {
+        .buttoms .buttom-language-icon-container .buttom {
+            margin-right: 0
+        }
+    }
+
+    .buttoms .buttom-language-icon-container .buttom i {
+        font-size: 35px
+    }
+
+    .buttoms .buttom-language-container {
+        display: flex
+    }
+
+    @media screen and (max-width:575px) {
+        .buttoms .buttom-language-container {
+            display: none
+        }
+    }
+
+    .buttoms .buttom-language-container .buttom {
+        height: 40px;
+        margin: 0 10px;
+        border-radius: 20px;
+        cursor: pointer
+    }
+
+    .buttoms .buttom-language-container .buttom span {
+        color: #7e0505;
+        font-size: 18px
+    }
+
+    .buttoms .buttom-language-container .buttom i {
+        color: #7e0505 !important
+    }
+
+    .buttoms .buttom-login-container .buttom {
+        padding: 0 15px;
+        height: 40px;
+        margin: 0 10px;
+        border: 2px solid #7e0505;
+        border-radius: 20px;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: all .3s
+    }
+
+    .buttoms .buttom-login-container .buttom .icon {
+        display: none;
+        font-size: 35px
+    }
+
+    @media screen and (max-width:360px) {
+        .buttoms .buttom-login-container .buttom .icon {
+            display: inline
+        }
+    }
+
+    .buttoms .buttom-login-container {
+        color: #7e0505
+    }
+
+    .background .mbr-section-title,
+    .mbr-text {
+        color: #fff
+    }
+
+    .background .mbr-section-title {
+        margin-bottom: 22px
+    }
+
+    .nav-fixed .logo-flowch {
+        flex: 1;
+        display: flex;
+        justify-content: start;
+        padding-bottom: 20px;
+        animation-name: example
+    }
+
+    .nav-fixed .logo-flowch img {
+        width: 90px
+    }
+
+    .nav-fixed {
+        transition: top .3s ease-in-out;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 80px;
+        z-index: 4;
+        align-items: center;
+        display: flex
+    }
+
+    @keyframes scrollAnimation {
+        0% {
+            top: 0
+        }
+
+        100% {
+            top: -80px
+        }
+    }
+
+    @media (max-width:992px) {
+        .nav-fixed {
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .logo-flowch img {
+            width: 54px
+        }
+
+        .container {
+            padding: 0 10%
+        }
+    }
+
+    .buttom-login-container-scroll {
+        color: #7e0505 !important;
+        border-color: #7e0505 !important
+    }
+
+    /*! CSS Used from: Embedded */
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box
+    }
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        font-weight: 500;
+        line-height: 1.2
+    }
+
+    h1 {
+        font-size: calc(1.375rem + 1.5vw)
+    }
+
+    @media (min-width:1200px) {
+        h1 {
+            font-size: 2.5rem
+        }
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem
+    }
+
+    strong {
+        font-weight: bolder
+    }
+
+    a {
+        color: #0d6efd;
+        text-decoration: underline
+    }
+
+    a:hover {
+        color: #0a58ca
+    }
+
+    img {
+        vertical-align: middle
+    }
+
+    .display-5 {
+        font-size: calc(1.425rem + 2.1vw);
+        font-weight: 300;
+        line-height: 1.2
+    }
+
+    @media (min-width:1200px) {
+        .display-5 {
+            font-size: 3rem
+        }
+    }
+
+    .container {
+        width: 100%;
+        padding-right: var(--bs-gutter-x, .75rem);
+        padding-left: var(--bs-gutter-x, .75rem);
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    @media (min-width:576px) {
+        .container {
+            max-width: 540px
+        }
+    }
+
+    @media (min-width:768px) {
+        .container {
+            max-width: 720px
+        }
+    }
+
+    @media (min-width:992px) {
+        .container {
+            max-width: 960px
+        }
+    }
+
+    @media (min-width:1200px) {
+        .container {
+            max-width: 1140px
+        }
+    }
+
+    @media (min-width:1400px) {
+        .container {
+            max-width: 1320px
+        }
+    }
+
+
+    .col-12 {
+        flex: 0 0 auto;
+        width: 100%
+    }
+
+    @media (min-width:768px) {
+        .col-md-12 {
+            flex: 0 0 auto;
+            width: 100%
+        }
+    }
+
+    @media (min-width:992px) {
+        .col-lg {
+            flex: 1 0 0%
+        }
+
+        .col-lg-5 {
+            flex: 0 0 auto;
+            width: 41.6666666667%
+        }
+    }
+
+    .btn {
+        display: inline-block;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+        .btn {
+            transition: none
+        }
+    }
+
+    .btn:hover {
+        color: #212529
+    }
+
+    .btn:focus {
+        outline: 0;
+        box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
+    }
+
+    .btn:disabled {
+        pointer-events: none;
+        opacity: .65
+    }
+
+    .btn-lg {
+        padding: .5rem 1rem;
+        font-size: 1.25rem;
+        border-radius: .3rem
+    }
+
+    .w-100 {
+        width: 100% !important
+    }
+
+    .justify-content-center {
+        justify-content: center !important
+    }
+
+    .mt-3 {
+        margin-top: 1rem !important
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem !important
+    }
+
+    /*! CSS Used from: Embedded */
+    .btn {
+        border-width: 2px
+    }
+
+    .cid-tWr40r0TmB img {
+        border-radius: 2rem !important
+    }
+
+    .display-5 {
+        font-family: 'Inter Tight', sans-serif;
+        font-size: 2.5rem;
+        line-height: 1.5
+    }
+
+    .display-7 {
+        font-family: 'Inter Tight', sans-serif;
+        font-size: 1.4rem;
+        line-height: 1.3
+    }
+
+    @media (max-width:768px) {
+        .display-5 {
+            font-size: 2rem;
+            font-size: calc(1.525rem + (2.5 - 1.525) * ((100vw - 20rem)/ (48 - 20)));
+            line-height: calc(1.4 * (1.525rem + (2.5 - 1.525) * ((100vw - 20rem)/ (48 - 20))))
+        }
+
+        .display-7 {
+            font-size: 1.12rem;
+            font-size: calc(1.14rem + (1.4 - 1.14) * ((100vw - 20rem)/ (48 - 20)));
+            line-height: calc(1.4 * (1.14rem + (1.4 - 1.14) * ((100vw - 20rem)/ (48 - 20))))
+        }
+    }
+
+    .btn {
+        padding: 1.25rem 2rem;
+        border-radius: 4px
+    }
+
+    @media (max-width:767px) {
+        .btn {
+            padding: .75rem 1.5rem
+        }
+    }
+
+    .btn-lg {
+        padding: 1.25rem 2rem;
+        border-radius: 4px
+    }
+
+    .btn-success-outline,
+    .btn-success-outline:active {
+        background-color: transparent !important;
+        border-color: #3a341c;
+        color: #3a341c
+    }
+
+    .btn-success-outline:focus,
+    .btn-success-outline:hover {
+        color: #000 !important;
+        background-color: transparent !important;
+        border-color: #000 !important;
+        box-shadow: none !important
+    }
+
+    .btn-success-outline:disabled {
+        color: #fff !important;
+        background-color: #3a341c !important;
+        border-color: #3a341c !important
+    }
+
+    .mbr-section-btn .btn:not(.btn-form) {
+        border-radius: 100px
+    }
+
+    a,
+    a:hover {
+        color: #9fe870
+    }
+
+    a {
+        transition: color .6s
+    }
+
+    .cid-tWr40r0TmB {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        background-color: white
+    }
+
+    @media (max-width:991px) {
+        .cid-tWr40r0TmB .image-wrapper {
+            margin-bottom: 1rem
+        }
+    }
+
+
+
+    @media (max-width:991px) {
+        .cid-tWr40r0TmB .image-wrapper {
+            padding: 1rem
+        }
+    }
+
+    @media (min-width:992px) {
+        .cid-tWr40r0TmB .text-wrapper {
+            padding: 0 2rem
+        }
+    }
+
+    .cid-tWr40r0TmB .mbr-section-title {
+        color: #000
+    }
+
+    .cid-tWr40r0TmB .mbr-section-btn,
+    .cid-tWr40r0TmB .mbr-text {
+        color: #000
+    }
+
+    /*! CSS Used from: Embedded */
+    .container {
+        width: 100%;
+        padding-right: var(--bs-gutter-x, .75rem);
+        padding-left: var(--bs-gutter-x, .75rem);
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    @media (min-width:576px) {
+        .container {
+            max-width: 540px
+        }
+    }
+
+    @media (min-width:768px) {
+        .container {
+            max-width: 720px
+        }
+    }
+
+    @media (min-width:992px) {
+        .container {
+            max-width: 960px
+        }
+    }
+
+    @media (min-width:1200px) {
+        .container {
+            max-width: 1140px
+        }
+    }
+
+    @media (min-width:1400px) {
+        .container {
+            max-width: 1320px
+        }
+    }
+
+    .col-12 {
+        flex: 0 0 auto;
+        width: 100%
+    }
+
+    @media (min-width:768px) {
+        .col-md-12 {
+            flex: 0 0 auto;
+            width: 100%
+        }
+    }
+
+    @media (min-width:992px) {
+        .col-lg {
+            flex: 1 0 0%
+        }
+
+        .col-lg-5 {
+            flex: 0 0 auto;
+            width: 41.6666666667%
+        }
+    }
+
+    .justify-content-center {
+        justify-content: center !important
+    }
+
+    .mt-3 {
+        margin-top: 1rem !important
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem !important
+    }
+
+    /*! CSS Used from: Embedded */
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box
+    }
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        font-weight: 500;
+        line-height: 1.2
+    }
+
+    h1 {
+        font-size: calc(1.375rem + 1.5vw)
+    }
+
+    @media (min-width:1200px) {
+        h1 {
+            font-size: 2.5rem
+        }
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem
+    }
+
+    strong {
+        font-weight: bolder
+    }
+
+    a {
+        color: #0d6efd;
+        text-decoration: underline
+    }
+
+    a:hover {
+        color: #0a58ca
+    }
+
+    img {
+        vertical-align: middle
+    }
+
+    /*! CSS Used from: Embedded */
+    section {
+        background-color: #fff
+    }
+
+    .container,
+    section {
+        position: relative;
+        word-wrap: break-word
+    }
+
+    a {
+        font-style: normal;
+        font-weight: 400;
+        cursor: pointer
+    }
+
+    a,
+    a:hover {
+        text-decoration: none
+    }
+
+    .mbr-section-title {
+        font-style: normal;
+        line-height: 1.3
+    }
+
+    .mbr-text {
+        font-style: normal;
+        line-height: 1.7
+    }
+
+    .display-5,
+    .display-7,
+    a,
+    h1,
+    p {
+        line-height: 1;
+        word-break: break-word;
+        word-wrap: break-word;
+        font-weight: 400
+    }
+
+    strong {
+        font-weight: 700
+    }
+
+    section {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+
+    .align-left {
+        text-align: left
+    }
+
+    img {
+        display: block;
+        width: 100%
+    }
+
+    .mbr-section-btn {
+        margin-left: -.6rem;
+        margin-right: -.6rem;
+        font-size: 0
+    }
+
+    .btn {
+        font-weight: 600;
+        border-width: 1px;
+        font-style: normal;
+        margin: .6rem .6rem;
+        white-space: normal;
+        transition: all .2s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        word-break: break-word
+    }
+
+    .btn-lg {
+        font-weight: 600;
+        letter-spacing: 0;
+        transition: all .3s ease-in-out
+    }
+
+
+    .justify-content-center {
+        -webkit-justify-content: center
+    }
+
+
+
+    :focus {
+        outline: 0
+    }
+
+    .mb-4 {
+        margin-bottom: 2rem !important
+    }
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+
+
+
+    /*! CSS Used fontfaces */
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwadkRFe9.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwa5kRFe9.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaZkRFe9.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwalkRFe9.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaVkRFe9.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwaRkRFe9.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: italic;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSyv5HMAFg6IuGlBNMjxLsCwapkRA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 200;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v7/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+</style>
+
+</html>
